@@ -12,6 +12,8 @@ private:
 	Fecha checkIn;
 	Fecha checkOut;
 	string codigoEstadia;
+	int codigoPromo;
+	string codigoReserva;
 
 public:
 	DataEstadia();
@@ -21,6 +23,8 @@ public:
 	Fecha getCheckIn();
 	Fecha getCheckOut();
 	string getCodigoEstadia();
+	int getCodigoPromo();
+	string getCodigoReserva();
 };
 
 #endif

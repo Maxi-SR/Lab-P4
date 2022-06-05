@@ -3,17 +3,21 @@
 #include "DataFecha.h"
 #include "DataReserva.h"
 #include <iostream>
+#include <set>
+
 using namespace std;
 
 class DataReservaGrupal : public DataReserva
 {
 private:
 	int canthuespedes;
+	set<string> huespedes;
 
 public:
 	DataReservaGrupal();
-	DataReservaGrupal(int, Fecha, Fecha, int);
+	DataReservaGrupal(int, Fecha, Fecha, int, int, set<string>);
 	int getCanthuespedes();
+	set<string> getHuespedes();
 	// bool operator==(DataReservaGrupal); tiene sentido esto?
 };
 

@@ -1,24 +1,26 @@
 #ifndef DATADESCRIPCION
 #define DATADESCRIPCION
 #include <string>
+#include <set>
 
 using namespace std;
 
 #include "DataHabitacion.h"
 
+class DataDescripcion
+{
+private:
+	set<string> comentarios;
+	set<string> calificaciones;
+	float promedio;
+	DataHabitacion habitacion;
 
-class DataDescripcion{
-	private:
-		string comentarios;
-		string calificaciones;
-		float promedio;
-		DataHabitacion habitacion;
-	public:
-		DataDescripcion();
-		string getComentarios();
-		string getCalificaciones();
-		float getPromedio();
-		DataHabitacion getHabitacion();
+public:
+	DataDescripcion();
+	set<string> getComentarios();
+	set<string> getCalificaciones();
+	float getPromedio();
+	DataHabitacion getHabitacion();
 };
 
 #endif
