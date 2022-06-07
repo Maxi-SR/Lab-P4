@@ -5,7 +5,7 @@
 #include "Habitacion.h"
 #include "Calificacion.h"
 #include "../dataTypes/DataComentario.h"
-#include "../dataTypes/DataInfoBasicaHostal.h"
+#include "../dataTypes/DataHostal.h"
 #include "Reserva.h"
 
 class Hostal
@@ -32,7 +32,7 @@ public:
 	// set<Calificacion> setCalificaciones();
 	set<DataComentario> darComSinResp();
 	void ingresarCom(string);
-	DataInfoBasicaHostal getDataInfoBasicaHostal();
+	DataHostal getDataInfoBasicaHostal();
 	void crearCalificacion(string, int);
 	set<Reserva> getReservas();
 	virtual ~Hostal();

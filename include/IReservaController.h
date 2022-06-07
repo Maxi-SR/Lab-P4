@@ -5,14 +5,14 @@ using namespace std;
 
 #include <set>
 #include "../dataTypes/DataHuesped.h"
-#include "../dataTypes/DtaHostal.h"
+#include "../dataTypes/DataHostal.h"
 #include "../dataTypes/DataFecha.h"
-#include "InfoReserva.h"
+#include "DataReserva.h"
 
 class IReservaController
 {
 public:
-	virtual set<DtaHostal> obtenerHostalesRegistrados() = 0;
+	virtual set<DataHostal> obtenerHostalesRegistrados() = 0;
 	virtual void seleccionarHostal(string, Fecha, Fecha, bool) = 0;
 	virtual set<int> obtenerHabitacionesDisponibles() = 0;
 	virtual void seleccionarHabitacion(int) = 0;
@@ -25,7 +25,7 @@ public:
 	virtual void ingresarEmailHuesped(string) = 0;
 	virtual set<int> listarReservas() = 0;
 	virtual void seleccionarReserva(int) = 0;
-	virtual set<InfoReserva> obtenerReservas() = 0;
+	virtual set<DataReserva> obtenerReservas() = 0;
 	virtual void cancelarBajaDeReserva() = 0;
 	virtual void confirmarBajaDeReserva() = 0;
 };

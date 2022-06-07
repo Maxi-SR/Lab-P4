@@ -9,24 +9,27 @@
 #include "Hostal.h"
 using namespace std;
 
-class Empleado: public Usuario: public Observer { //?
-	private:
-		Cargo cargo;
-		set<Notificacion> notificaciones;
-		Hostal* hostal;
-		set<Responde> respuestas;
-	public:
-		Empleado(string, string, std::string, Cargo, Hostal);
-		Cargo getCargo();
-		void setCargo(Cargo);
-		Hostal* getHostal();
-		void setHostal(Hostal);
-		set<Responde> getRespuestas();
-		void setRespuestas(Responde);
-		set<Notificacion> getNotificaciones();
-		void setNotificaciones(Notificacion);
-		set<Notificacion> Notificaciones();
-		~Empleado();
+// agregar public observer
+class Empleado : public Usuario
+{
+private:
+	Cargo cargo;
+	set<Notificacion> notificaciones;
+	Hostal *hostal;
+	set<Responde> respuestas;
+
+public:
+	Empleado(string, string, std::string, Cargo, Hostal);
+	Cargo getCargo();
+	void setCargo(Cargo);
+	Hostal *getHostal();
+	void setHostal(Hostal);
+	set<Responde> getRespuestas();
+	void setRespuestas(Responde);
+	set<Notificacion> getNotificaciones();
+	void setNotificaciones(Notificacion);
+	set<Notificacion> Notificaciones();
+	~Empleado();
 };
 
 #endif

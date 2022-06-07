@@ -7,7 +7,6 @@
 #include "Reserva.h"
 #include "Calificacion.h"
 #include "../dataTypes/DataEstadia.h"
-#include "../dataTypes/DtEstadia.h"
 using namespace std;
 
 class Estadia
@@ -46,7 +45,7 @@ public:
 	bool estaFinalizada();
 	DataEstadia obtenerDataEstadia();
 	bool existeActiva();
-	DtEstadia getInfoEstadia();
+	DataEstadia getInfoEstadia();
 	~Estadia();
 };
 
