@@ -14,6 +14,7 @@ private:
 	set<Reserva> reservas;
 
 public:
+	static ReservaController *getInstance();
 	set<DataHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, Fecha, Fecha, bool);
 	set<int> obtenerHabitacionesDisponibles();

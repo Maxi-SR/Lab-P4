@@ -20,6 +20,7 @@ private:
 	set<Habitacion> habitaciones;
 
 public:
+	static EstadiaController *getInstance();
 	set<string> obtenerHostalesRegistrados();
 	void seleccionarHostal(string);
 	set<DataEstadia> obtenerEstadiasRegistradas(Hostal);

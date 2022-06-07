@@ -17,17 +17,18 @@ class IEstadiaController;
 class IReservaController;
 class IReloj;
 
-class Fabrica{
-	private:
-		static Fabrica *instancia;
+class Fabrica
+{
+private:
+	static Fabrica *instancia;
 
-	public:
-		static Fabrica *getInstance();
-		IUsuarioController getInstanceUsuarioController();
-		IHostalController getInstanceHostalController();
-		IEstadiaController getInstanceEstadiaController();
-		IReservaController getInstanceReservaController();
-		IReloj getInstanceReloj();
-	};
+public:
+	static Fabrica *getInstance();
+	IUsuarioController *getInstanceUsuarioController();
+	IHostalController *getInstanceHostalController();
+	IEstadiaController *getInstanceEstadiaController();
+	IReservaController *getInstanceReservaController();
+	IReloj *getInstanceReloj();
+};
 
 #endif

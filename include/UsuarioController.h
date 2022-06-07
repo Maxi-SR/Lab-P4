@@ -11,34 +11,36 @@ using namespace std;
 #include "Huesped.h"
 #include "Calificacion.h"
 #include "IUsuarioController.h"
-class UsuarioController: public IUsuarioController{
-	private:
-		set<Huesped> huespedes;
-		set<Empleado> empleados;
+class UsuarioController : public IUsuarioController
+{
+private:
+	set<Huesped> huespedes;
+	set<Empleado> empleados;
 
-	public:
-		void ingresarDatosAlta(string, string, string); 
-		void ingresarDatoEmpleado(string); 
-		void ingresarDatoHuesped(bool); 
-		void cancelarAlta(); 
-		void reingresarEmail(string); 
-		void darAltaUsr(); 
-		set<string> obtenerHostalesRegistrados(); 
-		void seleccionarHostal(string); 
-		void ingresarEmailHuesped(string); 
-		bool estadiaActiva(); 
-		void confirmarFinalizarEstadia(); 
-		void cancelarFinalizarEstadia(); 
-		set<string> obtenerUsuariosRegistrados(); 
-		string seleccionarUsuario(string); 
-		DataUsuario obtenerInformacionUsuario();
-		set<DataEmpleado> obtenerEmpleadosNoAsignados();
-		void seleccionarEmpleado(string, Cargo);
-		set<DataHuesped> obtenerHuespedesRegistrados();
-		void asignarHabitacionUsuario(Huesped, Habitacion);//era Habitacion o int?
-		void asignarHuespedReserva(Huesped);
-		void ingresarMensaje(Calificacion, string);
-		string darHostalTrabaja(string);
-		};
+public:
+	static UsuarioController *getInstance();
+	void ingresarDatosAlta(string, string, string);
+	void ingresarDatoEmpleado(string);
+	void ingresarDatoHuesped(bool);
+	void cancelarAlta();
+	void reingresarEmail(string);
+	void darAltaUsr();
+	set<string> obtenerHostalesRegistrados();
+	void seleccionarHostal(string);
+	void ingresarEmailHuesped(string);
+	bool estadiaActiva();
+	void confirmarFinalizarEstadia();
+	void cancelarFinalizarEstadia();
+	set<string> obtenerUsuariosRegistrados();
+	string seleccionarUsuario(string);
+	DataUsuario obtenerInformacionUsuario();
+	set<DataEmpleado> obtenerEmpleadosNoAsignados();
+	void seleccionarEmpleado(string, Cargo);
+	set<DataHuesped> obtenerHuespedesRegistrados();
+	void asignarHabitacionUsuario(Huesped, Habitacion); // era Habitacion o int?
+	void asignarHuespedReserva(Huesped);
+	void ingresarMensaje(Calificacion, string);
+	string darHostalTrabaja(string);
+};
 
 #endif

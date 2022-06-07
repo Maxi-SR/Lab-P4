@@ -11,12 +11,16 @@
 #include "../dataTypes/DataDescripcion.h"
 #include "IHostalController.h"
 
+class Hostal;
+
+
 class HostalController : public IHostalController
 {
 private:
-	set<Hostal> hostales;
+	set<Hostal*> hostales;
 
 public:
+	static HostalController *getInstance();
 	void ingresarDatosHostal(string, string, int);
 	set<string> obtenerNombresHostalesRegistrados();
 	set<DataHostal> obtenerHostalesRegistrados();

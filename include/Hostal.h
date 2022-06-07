@@ -8,6 +8,10 @@
 #include "../dataTypes/DataHostal.h"
 #include "Reserva.h"
 
+class Habitacion;
+class Calificacion;
+class Reserva;
+
 class Hostal
 {
 private:
