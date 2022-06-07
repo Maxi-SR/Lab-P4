@@ -17,6 +17,7 @@ private:
 
 public:
 	DataDescripcion();
+	DataDescripcion(set<string>,set<string>,float,DataHabitacion);
 	set<string> getComentarios();
 	set<string> getCalificaciones();
 	float getPromedio();

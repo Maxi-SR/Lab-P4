@@ -3,12 +3,14 @@
 #include <string>
 #include "DataUsuario.h"
 
+using namespace std;
 
 class DataHuesped : public DataUsuario{
 	private:
 		bool finger;
 	public:
-		DataHuesped(std::string, std::string, bool);
+		DataHuesped();
+		DataHuesped(string, string, bool);
 		bool getFinger();
 };
 

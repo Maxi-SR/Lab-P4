@@ -8,7 +8,8 @@ using namespace std;
 class DataReservaIndividual : public DataReserva
 {
 public:
-	DataReservaIndividual(int, Fecha, Fecha, int);
+	DataReservaIndividual();
+	DataReservaIndividual(int, Fecha, Fecha, EstadoReserva, float, int);
 	bool operator==(DataReservaIndividual);
 };
 

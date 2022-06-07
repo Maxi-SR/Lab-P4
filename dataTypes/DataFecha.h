@@ -16,10 +16,6 @@ public:
 	int getMes();
 	int getAnio();
 	int getHora();
-	void getDia(int);
-	void getMes(int);
-	void getAnio(int);
-	void getHora(int);
 	bool operator==(Fecha);
 };
 

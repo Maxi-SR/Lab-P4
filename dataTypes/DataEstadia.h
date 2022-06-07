@@ -17,6 +17,7 @@ private:
 
 public:
 	DataEstadia();
+	DataEstadia(string,string,int,Fecha,Fecha,string,int,string);
 	string getHostal();
 	string getHuesped();
 	int getHabitacion();

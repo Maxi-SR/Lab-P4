@@ -15,7 +15,7 @@ private:
 
 public:
 	DataReservaGrupal();
-	DataReservaGrupal(int, Fecha, Fecha, int, int, set<string>);
+	DataReservaGrupal(int, Fecha, Fecha, EstadoReserva, float, int, int, set<string>);
 	int getCanthuespedes();
 	set<string> getHuespedes();
 	// bool operator==(DataReservaGrupal); tiene sentido esto?

@@ -1,7 +1,7 @@
 #ifndef DATARESERVA
 #define DATARESERVA
 #include "DataFecha.h"
-#include "../include/EstadoReserva.h"
+#include "EstadoReserva.h"
 #include <iostream>
 
 class DataReserva
@@ -16,13 +16,14 @@ protected:
 
 public:
 	DataReserva();
+	DataReserva(int, Fecha, Fecha, EstadoReserva, float, int);
 	int getCodigo();
 	Fecha getCheckIn();
 	Fecha getCheckOut();
 	EstadoReserva getEstado();
 	float getPrecio();
 	int getNumHab();
-	virtual ~DataReserva(){};
+	virtual ~DataReserva()=0;
 };
 
 #endif

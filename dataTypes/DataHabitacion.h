@@ -7,6 +7,7 @@ class DataHabitacion{
 		float precio;
 		int capacidad;
 	public:
+		DataHabitacion();
 		DataHabitacion(int, float, int);
 		int getNumero();
 		float getPrecio();

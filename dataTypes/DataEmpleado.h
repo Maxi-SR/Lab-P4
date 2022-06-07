@@ -1,10 +1,13 @@
 #ifndef DATAEMPLEADO
 #define DATAEMPLEADO
-#include <string>
-using namespace std;
-
 #include "Cargo.h"
 #include "DataUsuario.h"
+#include <string>
+
+
+using namespace std;
+
+
 
 
 class DataEmpleado : public DataUsuario{
@@ -12,6 +15,7 @@ class DataEmpleado : public DataUsuario{
 		string hostal;
 		Cargo cargo;
 	public:
+		DataEmpleado();
 		DataEmpleado(string, string, string, Cargo);
 		string getHostal();
 		Cargo getCargo();
