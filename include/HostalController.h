@@ -9,7 +9,6 @@
 #include "../dataTypes/DataEmpleado.h"
 #include "Cargo.h"
 #include "../dataTypes/DataDescripcion.h"
-#include "../dataTypes/DataHostal.h"
 #include "IHostalController.h"
 
 class HostalController : public IHostalController
@@ -40,7 +39,7 @@ public:
 	void seleccionComentario(int);
 	void ingresarComentario(string);
 	DataHostal obtenerInformacionBasicaHostal();
-	// set<DtaHostal> obtenerHostalesRegistrados();
+	// set<DataHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, Fecha, Fecha, bool);
 	set<int> obtenerHabitacionesDisponibles();
 };

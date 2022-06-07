@@ -5,7 +5,6 @@ using namespace std;
 
 #include <set>
 #include "../dataTypes/DataEstadia.h"
-#include "../dataTypes/DataHostal.h"
 #include "../dataTypes/DataComentario.h"
 #include "../dataTypes/DataEmpleado.h"
 #include "Cargo.h"

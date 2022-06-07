@@ -7,7 +7,7 @@ using namespace std;
 #include "../dataTypes/DataHuesped.h"
 #include "../dataTypes/DataHostal.h"
 #include "../dataTypes/DataFecha.h"
-#include "DataReserva.h"
+#include "../dataTypes/DataReserva.h"
 
 class IReservaController
 {

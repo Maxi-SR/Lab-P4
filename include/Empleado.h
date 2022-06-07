@@ -7,10 +7,12 @@
 #include "Responde.h"
 #include "Notificacion.h"
 #include "Hostal.h"
+#include "Observer.h"
+
 using namespace std;
 
 // agregar public observer
-class Empleado : public Usuario
+class Empleado : public Usuario, public Observer
 {
 private:
 	Cargo cargo;
@@ -28,7 +30,7 @@ public:
 	void setRespuestas(Responde);
 	set<Notificacion> getNotificaciones();
 	void setNotificaciones(Notificacion);
-	set<Notificacion> Notificaciones();
+	void Notificar(Notificacion n);
 	~Empleado();
 };
 

@@ -6,7 +6,6 @@
 #include "../dataTypes/DataHostal.h"
 #include "../dataTypes/DataFecha.h"
 #include "../dataTypes/DataHuesped.h"
-#include "DataReserva.h"
 #include "../dataTypes/DataReserva.h"
 #include "IReservaController.h"
 class ReservaController : public IReservaController
