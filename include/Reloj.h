@@ -8,7 +8,7 @@ class Reloj : public IReloj
 {
 private:
 	static Reloj *instancia;
-	Fecha *fecha;
+	DataFecha *fecha;
 	Reloj(int dia, int mes, int anio, int hora);
 
 public:

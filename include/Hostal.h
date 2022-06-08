@@ -17,21 +17,21 @@ class Hostal
 private:
 	string nombre;
 	string direccion;
-	string telefono;
-	set<Habitacion> habitaciones;
-	set<Calificacion> calificaciones;
-	set<Reserva> reservas;
+	int telefono;
+	set<Habitacion> *habitaciones;
+	set<Calificacion> *calificaciones;
+	set<Reserva> *reservas;
 
 public:
-	Hostal(string, string, string, Habitacion, Calificacion, Reserva);
+	Hostal(string, string, int ,set<Habitacion > *, set<Calificacion> *, set<Reserva> *);
 	string getDireccion();
 	string getNombre();
-	string getTelefono();
+	int getTelefono();
 	set<Habitacion> getHabitaciones();
 	set<Calificacion> getCalificaciones();
 	void setDireccion(string);
 	void setNombre(string);
-	void setTelefono(string);
+	void setTelefono(int);
 	// void setHabitacion(Habitacion);
 	// set<Calificacion> setCalificaciones();
 	set<DataComentario> darComSinResp();

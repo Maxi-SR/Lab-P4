@@ -1,24 +1,24 @@
-#ifndef FECHA
-#define FECHA
+#ifndef DATAFECHA
+#define DATAFECHA
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Fecha
+class DataFecha
 {
 private:
 	int dia, mes, anio, hora;
 
 public:
-	Fecha();
-	Fecha(int, int, int, int);
+	DataFecha();
+	DataFecha(int, int, int, int);
 	int getDia();
 	int getMes();
 	int getAnio();
 	int getHora();
-	bool operator==(Fecha);
-};
+	bool operator==(DataFecha);
 
-ostream &operator<<(ostream &os, Fecha &f);
+friend ostream &operator<<(ostream &os, DataFecha &f);
+};
 
 #endif

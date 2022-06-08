@@ -5,12 +5,12 @@
 using namespace std;
 
 class DataUsuario{
-	private:
+	protected:
 		string nombre;
 		string email;
 	public:
 		DataUsuario();
-		DataUsuario(string,string);
+	
 		string getEmail();
 		string getNombre();
 		virtual ~DataUsuario(){};

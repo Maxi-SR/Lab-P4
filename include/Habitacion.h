@@ -25,7 +25,7 @@ public:
 	float setPrecio();
 	int setCapacidad();
 	set<Reserva> setReservas();
-	set<Reserva> getReservas(Fecha, Fecha);
+	set<Reserva> getReservas(DataFecha, DataFecha);
 	~Habitacion();
 };
 

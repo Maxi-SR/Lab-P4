@@ -17,20 +17,20 @@ private:
 	Reserva *reserva;
 	Calificacion *calificacion;
 	int habitacion;
-	Fecha checkIn;
-	Fecha checkOut;
+	DataFecha checkIn;
+	DataFecha checkOut;
 	string codigoEstadia;
 	int codigoPromo;
 
 public:
-	Estadia(string, Huesped *, Reserva *, int, Fecha, Fecha, string);
+	Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
 	string getHostal();
 	Huesped *getHuesped();
 	Reserva *getReserva();
 	Calificacion *getCalificacion();
 	int getHabitacion();
-	Fecha getCheckIn();
-	Fecha getCheckOut();
+	DataFecha getCheckIn();
+	DataFecha getCheckOut();
 	string getCodigoEstadia();
 	int getCodigoPromo();
 	string setHostal(string);
@@ -38,8 +38,8 @@ public:
 	Reserva *setReserva(Reserva);
 	Calificacion *setCalificacion(Calificacion);
 	int setHabitacion(int);
-	Fecha setCheckIn(Fecha);
-	Fecha setCheckOut(Fecha);
+	DataFecha setCheckIn(DataFecha);
+	DataFecha setCheckOut(DataFecha);
 	string setCodigoEstadia(string);
 	int setCodigoPromo(int);
 	bool estaFinalizada();

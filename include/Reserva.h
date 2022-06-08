@@ -12,8 +12,8 @@ class Reserva
 {
 private:
 	int codigo;
-	Fecha checkIn;
-	Fecha checkOut;
+	DataFecha checkIn;
+	DataFecha checkOut;
 	EstadoReserva estado;
 	float precio;
 	Habitacion *habitacion;
@@ -21,16 +21,16 @@ private:
 	set<Huesped> huespedes;
 	// Huesped* huesped;
 public:
-	Reserva(int, Fecha, Fecha, Habitacion, Huesped);
+	Reserva(int, DataFecha, DataFecha, Habitacion, Huesped);
 	// int getCodigo();
-	Fecha getCheckIn();
-	Fecha getCheckOut();
+	DataFecha getCheckIn();
+	DataFecha getCheckOut();
 	EstadoReserva getEstado();
 	virtual float getPrecio() = 0;
 	// Huesped getHuesped();
 	set<Huesped> getHuespedes();
-	Fecha setCheckIn(Fecha);
-	Fecha setCheckOut(Fecha);
+	DataFecha setCheckIn(DataFecha);
+	DataFecha setCheckOut(DataFecha);
 	// void setHuesped(Huesped);
 	void setEstado(EstadoReserva);
 	int obtenerIdReserva();

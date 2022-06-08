@@ -8,7 +8,7 @@
 class ReservaIndividual : public Reserva
 {
 public:
-	ReservaIndividual(int, Fecha, Fecha, EstadoReserva, float);
+	ReservaIndividual(int, DataFecha, DataFecha, EstadoReserva, float);
 };
 
 #endif

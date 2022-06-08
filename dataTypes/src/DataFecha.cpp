@@ -1,32 +1,32 @@
 #include "../DataFecha.h"
 #include <iostream>
 
-Fecha::Fecha(){
-}
+DataFecha::DataFecha(){
+};
 
-Fecha::Fecha(int dia, int mes, int anio, int hora){
+DataFecha::DataFecha(int dia, int mes, int anio, int hora){
     this->dia = dia;
     this->mes = mes;
     this->anio = anio;
     this->hora = hora;
-}
+};
 
-int Fecha::getDia(){
+int DataFecha::getDia(){
     return this->dia;
 }
 
-int Fecha::getMes(){
+int DataFecha::getMes(){
     return this->mes;
 }
 
-int Fecha::getAnio(){
+int DataFecha::getAnio(){
     return this->anio;
 }
 
-int Fecha::getHora(){
+int DataFecha::getHora(){
     return this->hora;
 }
 
-bool Fecha::operator==(Fecha f){
+bool DataFecha::operator==(DataFecha f){
     return (this->dia == f.getDia() && this->mes == f.getMes() && this->anio == f.getAnio() && this->hora == f.getHora());
 }

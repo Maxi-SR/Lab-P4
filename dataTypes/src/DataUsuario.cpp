@@ -1,10 +1,6 @@
 #include "../DataUsuario.h"
 //Se implementa el destructor en los data?
 
-DataUsuario::DataUsuario(string nombreUsr,string emailUsr){
-    this->nombre = nombreUsr;
-    this->email = emailUsr;
-}
 
 string DataUsuario::getEmail(){
    return this->email;

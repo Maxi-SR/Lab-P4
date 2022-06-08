@@ -1,4 +1,4 @@
-#include "../include/fabrica.h"
+#include "../include/Fabrica.h"
 
 Fabrica *Fabrica::instancia = NULL;
 

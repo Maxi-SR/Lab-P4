@@ -2,6 +2,7 @@
 #define HOSTALCONTROLLER
 #include <string>
 #include <set>
+#include <vector>
 #include "../dataTypes/DataEstadia.h"
 #include "../dataTypes/DataHostal.h"
 #include "Hostal.h"
@@ -17,7 +18,7 @@ class Hostal;
 class HostalController : public IHostalController
 {
 private:
-	set<Hostal*> hostales;
+	vector<Hostal*> hostales;
 
 public:
 	static HostalController *getInstance();
@@ -44,7 +45,7 @@ public:
 	void ingresarComentario(string);
 	DataHostal obtenerInformacionBasicaHostal();
 	// set<DataHostal> obtenerHostalesRegistrados();
-	void seleccionarHostal(string, Fecha, Fecha, bool);
+	void seleccionarHostal(string, DataFecha, DataFecha, bool);
 	set<int> obtenerHabitacionesDisponibles();
 };
 

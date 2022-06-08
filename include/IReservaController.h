@@ -13,7 +13,7 @@ class IReservaController
 {
 public:
 	virtual set<DataHostal> obtenerHostalesRegistrados() = 0;
-	virtual void seleccionarHostal(string, Fecha, Fecha, bool) = 0;
+	virtual void seleccionarHostal(string, DataFecha, DataFecha, bool) = 0;
 	virtual set<int> obtenerHabitacionesDisponibles() = 0;
 	virtual void seleccionarHabitacion(int) = 0;
 	virtual set<DataHuesped> obtenerHuepedesRegistrados() = 0;

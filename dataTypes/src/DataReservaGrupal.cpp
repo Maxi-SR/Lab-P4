@@ -1,10 +1,9 @@
 #include "../DataReservaGrupal.h"
 #include <iostream>
 
-DataReservaGrupal::DataReservaGrupal(){
-}
 
-DataReservaGrupal(int codigo, Fecha checkIn, Fecha checkOut, EstadoReserva estado, float precio, int numHab, int canthuespedes, set<string> huespedes){
+
+DataReservaGrupal::DataReservaGrupal(int codigo, DataFecha checkIn, DataFecha checkOut, EstadoReserva estado, float precio, int numHab, int canthuespedes, set<string> huespedes){
     this->codigo = codigo;
     this->checkIn = checkIn;
     this->checkOut = checkOut;

@@ -11,7 +11,7 @@ private:
 	int canthuespedes;
 
 public:
-	ReservaGrupal(int, Fecha, Fecha, EstadoReserva, float, int);
+	ReservaGrupal(int, DataFecha, DataFecha, EstadoReserva, float, int);
 	int getCanthuespedes();
 };
 

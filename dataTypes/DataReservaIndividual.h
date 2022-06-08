@@ -9,7 +9,7 @@ class DataReservaIndividual : public DataReserva
 {
 public:
 	DataReservaIndividual();
-	DataReservaIndividual(int, Fecha, Fecha, EstadoReserva, float, int);
+	DataReservaIndividual(int, DataFecha, DataFecha, EstadoReserva, float, int);
 	bool operator==(DataReservaIndividual);
 };
 

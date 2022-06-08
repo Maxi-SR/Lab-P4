@@ -1,10 +1,9 @@
 #include "../DataReservaIndividual.h"
 #include <iostream>
 
-DataReservaIndividual::DataReservaIndividual(){
-}
 
-DataReservaIndividual::DataReservaIndividual(int codigo, Fecha checkIn, Fecha checkOut, EstadoReserva estado, float precio, int numHab){
+
+DataReservaIndividual::DataReservaIndividual(int codigo, DataFecha checkIn, DataFecha checkOut, EstadoReserva estado, float precio, int numHab){
     this->codigo = codigo;
     this->checkIn = checkIn;
     this->checkOut = checkOut;

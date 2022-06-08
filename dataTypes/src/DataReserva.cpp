@@ -1,27 +1,20 @@
 #include "../DataReserva.h"
 #include <iostream>
 
-DataReserva::DataReserva(){
-}
+// DataReserva::DataReserva(){
+// }
 
-DataReserva::DataReserva(int codigo, Fecha checkIn, Fecha checkOut, EstadoReserva estado, float precio, int numHab){
-    this->codigo = codigo;
-    this->checkIn = checkIn;
-    this->checkOut = checkOut;
-    this->estado = estado;
-    this->precio = precio;
-    this->numHab = numHab;
-}
+
 
 int DataReserva::getCodigo(){
     return this->codigo;
 }
 
-Fecha DataReserva::getCheckIn(){
+DataFecha DataReserva::getCheckIn(){
     this->checkIn;
 }
 
-Fecha DataReserva::getCheckOut(){
+DataFecha DataReserva::getCheckOut(){
     this->checkOut;
 }
 

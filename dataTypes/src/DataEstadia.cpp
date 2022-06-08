@@ -4,7 +4,7 @@
 DataEstadia::DataEstadia(){
 }
 
-DataEstadia::DataEstadia(string hostal,string huesped, int habitacion, Fecha checkIn, Fecha checkOut, string codigoEstadia, int codigoPromo, string codigoReserva){
+DataEstadia::DataEstadia(string hostal,string huesped, int habitacion, DataFecha checkIn, DataFecha checkOut, string codigoEstadia, int codigoPromo, string codigoReserva){
     this->hostal = hostal;
     this->huesped = huesped;
     this->habitacion = habitacion;
@@ -27,11 +27,11 @@ int DataEstadia::getHabitacion(){
     return this->habitacion;
 }
 
-Fecha DataEstadia::getCheckIn(){
+DataFecha DataEstadia::getCheckIn(){
     return this->checkIn;
 }
 
-Fecha DataEstadia::getCheckOut(){
+DataFecha DataEstadia::getCheckOut(){
     return this->checkOut;
 }
 

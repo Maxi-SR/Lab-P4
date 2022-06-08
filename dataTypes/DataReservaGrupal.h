@@ -2,6 +2,7 @@
 #define DATARESERVAGRUPAL
 #include "DataFecha.h"
 #include "DataReserva.h"
+#include "../include/EstadoReserva.h"
 #include <iostream>
 #include <set>
 
@@ -15,7 +16,9 @@ private:
 
 public:
 	DataReservaGrupal();
-	DataReservaGrupal(int, Fecha, Fecha, EstadoReserva, float, int, int, set<string>);
+	//DataReservaGrupal(int,Fecha, Fecha, EstadoReserva, float, int, int, set<string>);
+	DataReservaGrupal(int, DataFecha, DataFecha, EstadoReserva,float,int,int,set<string>);
+
 	int getCanthuespedes();
 	set<string> getHuespedes();
 	// bool operator==(DataReservaGrupal); tiene sentido esto?
