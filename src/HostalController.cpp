@@ -4,7 +4,8 @@ void HostalController::ingresarDatosHostal(string nom,string dir,int tel){
 
     //el controlador se encarga de decirle a 
     //la clase hostal que cree una instancia de hostal
-    Hostal h = Hostal(nom,dir,tel,NULL,NULL,NULL);
+    Hostal h = Hostal(nom,dir,tel,NULL,NULL,NULL); //alta de hostal solo pide los primeros 3 parametros,
+                                                  //lo otro se va a ir agregando a medida que avanza
 
     //creada la instancia h
     //se agrega a la coleccion de hostales

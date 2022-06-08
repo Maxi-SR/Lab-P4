@@ -18,9 +18,9 @@ private:
 	string nombre;
 	string direccion;
 	int telefono;
-	set<Habitacion> *habitaciones;
-	set<Calificacion> *calificaciones;
-	set<Reserva> *reservas;
+	set<Habitacion> *habitaciones; // no era un puntero a habitaciones, le puse yo(maxi) para poder hacer NULL
+	set<Calificacion> *calificaciones;//no era un puntero a calificaciones, le puse yo(maxi) para poder hacer NULL
+	set<Reserva> *reservas;//no era un puntero a reservas, le puse yo(maxi) para poder hacer NULL
 
 public:
 	Hostal(string, string, int ,set<Habitacion > *, set<Calificacion> *, set<Reserva> *);
