@@ -11,15 +11,15 @@ class DataDescripcion
 {
 private:
 	set<string> comentarios;
-	set<string> calificaciones;
+	set<int> calificaciones;
 	float promedio;
 	DataHabitacion habitacion;
 
 public:
-	DataDescripcion();
-	DataDescripcion(set<string>,set<string>,float,DataHabitacion);
+	//DataDescripcion();
+	DataDescripcion(set<string>,set<int>,float,DataHabitacion);
 	set<string> getComentarios();
-	set<string> getCalificaciones();
+	set<int> getCalificaciones();
 	float getPromedio();
 	DataHabitacion getHabitacion();
 };

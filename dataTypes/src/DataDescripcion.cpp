@@ -4,7 +4,7 @@
 DataDescripcion::DataDescripcion(){
 }
 
-DataDescripcion::DataDescripcion(set<string> com, set<string> cal,float prom, DataHabitacion hab){
+DataDescripcion::DataDescripcion(set<string> com, set<int> cal,float prom, DataHabitacion hab){
     this->comentarios = com;
     this->calificaciones = cal;
     this->promedio = prom;
@@ -15,7 +15,7 @@ set<string> DataDescripcion::getComentarios(){
     return this->comentarios;
 }
 
-set<string> DataDescripcion::getCalificaciones(){
+set<int> DataDescripcion::getCalificaciones(){
     return this->calificaciones;
 }
 

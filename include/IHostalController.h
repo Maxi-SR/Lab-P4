@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+#include <vector>
 #include <set>
 #include "../dataTypes/DataEstadia.h"
 #include "../dataTypes/DataComentario.h"
@@ -25,7 +26,7 @@ public:
 	virtual void seleccionarEmpleado(string, Cargo) = 0;
 	virtual void cancelarAsignacion() = 0;
 	virtual void confirmarAsignacion() = 0;
-	virtual set<string> consultarTop3Hostales() = 0;
+	virtual vector<string> consultarTop3Hostales() = 0;//cambie aca tenia set
 	virtual DataDescripcion verDetalles(string) = 0;
 	virtual void ingresarEmailHuesped(string) = 0;
 	virtual set<DataEstadia> obtenerEstadiasFinalizadasHuesped() = 0;

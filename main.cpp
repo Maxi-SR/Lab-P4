@@ -67,7 +67,8 @@ int main(){
             break;
             
             case 6: {
-
+                cout << "Los tres hostales con mayor promedio son:";
+                
             }
             break;
             

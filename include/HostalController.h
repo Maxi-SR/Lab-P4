@@ -18,7 +18,7 @@ class Hostal;
 class HostalController : public IHostalController
 {
 private:
-	vector<Hostal*> hostales;
+	map<string, Hostal*> hostales;
 
 public:
 	static HostalController *getInstance();
@@ -33,7 +33,7 @@ public:
 	void seleccionarEmpleado(string, Cargo);
 	void cancelarAsignacion();
 	void confirmarAsignacion();
-	set<string> consultarTop3Hostales();
+	vector<string> consultarTop3Hostales();
 	DataDescripcion verDetalles(string);
 	void ingresarEmailHuesped(string);
 	set<DataEstadia> obtenerEstadiasFinalizadasHuesped();
