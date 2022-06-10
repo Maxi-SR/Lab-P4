@@ -24,8 +24,8 @@ void HostalController::ingresarDatosHostal(string nom,string dir,int tel){
 }
 
 vector<string> HostalController::consultarTop3Hostales(){
-    Fabrica *fabrica = Fabrica::getInstance();
-    IReservaController *r = fabrica->getInstanceReservaController();
+    //Fabrica *fabrica = Fabrica::getInstance();
+    ReservaController *r = ReservaController::getInstance();
     set<DataHostal> CalifHostales = r->obtenerHostalesRegistrados();  
     vector<string> resultado;
     set<DataHostal>::iterator it = CalifHostales.begin();
@@ -67,7 +67,9 @@ vector<string> HostalController::consultarTop3Hostales(){
     }
     resultado.push_back(primero.getNombre()); //esto accede al nombre del hostal?
     resultado.push_back(segundo.getNombre()); //necesito saber como inserta, si no puede ser que primero no quede primero
-    resultado.push_back(tercero.getNombre()); //ARREGLO???
+    resultado.push_back(tercero.getNombre()); //ARREGLO???*/
+    vector<string> resultado;
+    return resultado;
 }
 
 DataDescripcion HostalController::verDetalles(string nombreHostal){

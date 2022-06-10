@@ -1,22 +1,21 @@
-#include "..//include/Fabrica.h"
-#include "../include/IEstadiaController.h"
-#include "../include/IUsuarioController.h"
-#include "../include/IReservaController.h"
-#include "../include/IHostalController.h"
-#include "../include/IReloj.h"
+#include "./include/Fabrica.h"
+#include "./include/IEstadiaController.h"
+#include "./include/IUsuarioController.h"
+#include "./include/IReservaController.h"
+#include "./include/IHostalController.h"
+#include "./include/IReloj.h"
 
 #include <iostream>
 #include <set>
 
 int main(){
     Fabrica *fabrica = Fabrica::getInstance();
-    IEstadiaController  *estadia = fabrica->getInstanceEstadiaController();
-    IUsuarioController *usuario = fabrica ->getInstanceUsuarioController();
-    IReservaController *reserva = fabrica->getInstanceReservaController();
+    //IEstadiaController  *estadia = fabrica->getInstanceEstadiaController();
+    //IUsuarioController *usuario = fabrica ->getInstanceUsuarioController();
+    //IReservaController *reserva = fabrica->getInstanceReservaController();
     IHostalController *hostal = fabrica->getInstanceHostalController();
-    IReloj * reloj = fabrica->getInstanceReloj();
+    //IReloj * reloj = fabrica->getInstanceReloj();
     int opcion;
-    do{
         cout << "01: Alta de usuario" << endl;
         cout << "02: Alta de hostal" << endl;
         cout << "03: Alta de habitacion" << endl;
@@ -38,6 +37,10 @@ int main(){
         cout << "19: Modificar Fecha del Sistema" << endl;
         cout << "20: Cargar datos" << endl;
         cout << "00: Salir" << endl;
+        
+    do{
+        cout<<"\nIngrese una opcion: ";
+        cin >> opcion;
 
         switch(opcion){
             case 1: {
@@ -47,7 +50,15 @@ int main(){
             
             case 2: {
                 cout << "Ingresar nombre de hostal" << endl;
-
+                string nombre;
+                cin >> nombre;
+                cout << "Ingresar direccion de hostal" << endl;
+                string direccion;
+                cin >> direccion;
+                cout << "Ingresar telefono de hostal" << endl;
+                int telefono;
+                cin >> telefono;
+                hostal->ingresarDatosHostal(nombre,direccion,telefono);
             }
             break;
             
@@ -67,8 +78,10 @@ int main(){
             break;
             
             case 6: {
-                cout << "Los tres hostales con mayor promedio son:";
-                
+                string nombre;
+                cin >> nombre;
+                DataDescripcion d = hostal->verDetalles(nombre);
+                cout << d.getPromedio();
             }
             break;
             

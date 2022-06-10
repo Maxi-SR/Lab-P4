@@ -20,6 +20,7 @@ class Calificacion{
 		int getCalificacion();
 		string getComentario();
 		set<Responde> getRespuestas();
+		void setRespuestas(set<Responde>);
 		bool noRespuesta();
 		DataComentario darDatos();
 		void responder(string);

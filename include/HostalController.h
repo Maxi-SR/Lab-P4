@@ -12,6 +12,8 @@
 #include "../dataTypes/DataDescripcion.h"
 #include "IHostalController.h"
 
+using namespace std;
+
 class Hostal;
 
 
