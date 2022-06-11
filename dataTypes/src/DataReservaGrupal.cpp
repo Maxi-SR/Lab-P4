@@ -1,17 +1,31 @@
-#include "../DataReservaGrupal.h"
+
+#include "DataReservaGrupal.h"
+
 #include <iostream>
+using namespace std;
 
+DataReservaGrupal::DataReservaGrupal(int codigo,DataFecha checkIn,DataFecha checkOut,int cantHuespedes){
 
-
-DataReservaGrupal::DataReservaGrupal(int codigo, DataFecha checkIn, DataFecha checkOut, EstadoReserva estado, float precio, int numHab, int canthuespedes, set<string> huespedes){
     this->codigo = codigo;
     this->checkIn = checkIn;
     this->checkOut = checkOut;
-    this->estado = estado;
-    this->precio = precio;
-    this->numHab = numHab;
-    this->canthuespedes = canthuespedes;
-    this->huespedes = huespedes;
+    this->cantHuespedes = cantHuespedes;
+
+
 }
 
 
+int DataReservaGrupal::getCantHuespedes(){
+    return this->cantHuespedes;
+}
+
+
+ std::ostream& operator<<(std::ostream& os, DataReservaGrupal* rg){
+    DataFecha co = rg->getCheckOut();
+    DataFecha ci = rg->getCheckIn();
+ 
+	os
+		<< "\nCodigo: " << rg->getCodigo() << "\nFechaCheckIn: " <<
+         ci <<  "\nFechaCheckOut: " << co << "\nCantidad de Huespedes: "<< rg->getCantHuespedes();
+	return os;
+}

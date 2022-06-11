@@ -1,16 +1,13 @@
-#include "../DataHuesped.h"
-#include <iostream>
+#include "DataHuesped.h"
 
-DataHuesped::DataHuesped(){
-}
 
-DataHuesped::DataHuesped(string nombre, string email, bool finger){
-    this->nombre = nombre;
-    this->email = email;
+DataHuesped::DataHuesped(string nombre,string email,bool finger){
+    this->nombre = getNombre();
+    this->email = getEmail();
     this->finger = finger;
 }
 
-bool DataHuesped::getFinger(){
+
+bool DataHuesped::esFinger(){
     return this->finger;
 }
-

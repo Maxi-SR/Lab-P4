@@ -1,18 +1,8 @@
-#include "../DataReservaIndividual.h"
-#include <iostream>
+#include "DataReservaIndividual.h"
 
 
-
-DataReservaIndividual::DataReservaIndividual(int codigo, DataFecha checkIn, DataFecha checkOut, EstadoReserva estado, float precio, int numHab){
+DataReservaIndividual::DataReservaIndividual(int codigo,DataFecha checkIn,DataFecha checkOut){
     this->codigo = codigo;
     this->checkIn = checkIn;
     this->checkOut = checkOut;
-    this->estado = estado;
-    this->precio = precio;
-    this->numHab = numHab;
 }
-
-bool DataReservaIndividual::operator==(DataReservaIndividual r){
-    return (this->codigo == r.getCodigo() && this->checkIn == r.getCheckIn() && this->checkOut == r.getCheckOut() && this->estado == r.getEstado() && this->precio == r.getPrecio() && this->numHab == r.getNumHab());
-}
-

@@ -1,29 +1,17 @@
 #ifndef DATARESERVA
 #define DATARESERVA
-#include "DataFecha.h"
-#include "../include/EstadoReserva.h"
-#include <iostream>
 
-class DataReserva
-{
-protected:
-	int codigo;
-	DataFecha checkIn;
-	DataFecha checkOut;
-	EstadoReserva estado;
-	float precio;
-	int numHab;
 
-public:
-	DataReserva();
+#include "DatasReserva.h"
 
-	int getCodigo();
-	DataFecha getCheckIn();
-	DataFecha getCheckOut();
-	EstadoReserva getEstado();
-	float getPrecio();
-	int getNumHab();
-	virtual ~DataReserva()=0;
+
+class DataReserva: public DatasReserva {
+
+    private:
+
+    public:
+        DataReserva();
 };
+
 
 #endif

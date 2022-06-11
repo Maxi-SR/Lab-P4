@@ -1,18 +1,18 @@
 #ifndef DATARESERVAINDIVIDUAL
 #define DATARESERVAINDIVIDUAL
-#include "DataFecha.h"
-#include "DataReserva.h"
-#include <iostream>
-using namespace std;
 
-class DataReservaIndividual : public DataReserva
-{
-public:
-	DataReservaIndividual();
-	DataReservaIndividual(int, DataFecha, DataFecha, EstadoReserva, float, int);
-	bool operator==(DataReservaIndividual);
+
+#include "DataReserva.h"
+
+
+class DataReservaIndividual: public DataReserva {
+
+
+    public:
+
+        DataReservaIndividual(int,DataFecha,DataFecha);
+
 };
 
-ostream &operator<<(ostream &os, DataReservaIndividual *ri);
 
 #endif

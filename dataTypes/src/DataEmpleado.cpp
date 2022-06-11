@@ -1,24 +1,25 @@
-#include "../DataEmpleado.h"
-#include "../DataUsuario.h"
-#include <iostream>
+#include "DataEmpleado.h"
 
-DataEmpleado::DataEmpleado(){
 
-}
 
-DataEmpleado::DataEmpleado(string nombre, string email, string hostal, Cargo cargo){
-    this->nombre = nombre;
-    this->email = email;
+
+DataEmpleado::DataEmpleado(string nombre,string email,string hostal,Cargo tipoCargo)
+{
+    this->nombre = getNombre();
+    this->email = getEmail();
     this->hostal = hostal;
-    this->cargo = cargo;
+    this->tipoCargo = tipoCargo;
 }
+
 
 string DataEmpleado::getHostal(){
     return this->hostal;
 }
 
 Cargo DataEmpleado::getCargo(){
-    return this->cargo;
+    return this->tipoCargo;
 }
 
-
+DataEmpleado::~DataEmpleado()
+{
+}
