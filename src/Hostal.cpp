@@ -52,6 +52,18 @@ set<Reserva> Hostal::getReservas(){
 
 }
 
+float Hostal::getPromedio(){
+    int contador = 0;
+    float total = 0;
+    for (std::set<Calificacion>::iterator it = calificaciones->begin(); it != calificaciones->end(); ++it){
+        contador++;
+        Calificacion actual = *it;
+        total += actual.getCalificacion();
+    }
+    return total/contador;
+}
+
+
 //HACER DESTRUCTOR 
 
 

@@ -4,6 +4,7 @@
 #include <set>
 #include "Reserva.h"
 #include "../dataTypes/DataHostal.h"
+#include "../dataTypes/DtaHostal.h"
 #include "../dataTypes/DataFecha.h"
 #include "../dataTypes/DataHuesped.h"
 #include "../dataTypes/DataReserva.h"
@@ -15,7 +16,7 @@ private:
 
 public:
 	static ReservaController *getInstance();
-	set<DataHostal> obtenerHostalesRegistrados();
+	set<DtaHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
 	set<int> obtenerHabitacionesDisponibles();
 	void seleccionarHabitacion(int);

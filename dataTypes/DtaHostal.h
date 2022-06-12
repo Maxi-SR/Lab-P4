@@ -6,11 +6,11 @@
 
 class DtaHostal: public DatasHostal {
     private:
-        int calPromedio;
+        float calPromedio;
 
     public:
-
-        DtaHostal(string,string,int);
+        DtaHostal();
+        DtaHostal(string,string,float);
         int getCalPromedio();
 
 

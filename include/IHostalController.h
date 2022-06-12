@@ -18,6 +18,7 @@ public:
 	virtual void ingresarDatosHostal(string, string, int) = 0;
 	virtual set<string> obtenerNombresHostalesRegistrados() = 0;
 	virtual set<DataHostal> obtenerHostalesRegistrados() = 0;
+	virtual set<DtaHostal> obtener_Hostales_Registrados() = 0;
 	virtual void seleccionarHostal(string) = 0;
 	virtual void ingresarDatosHab(int, float, int) = 0;
 	virtual void darAltaHabitacion() = 0;

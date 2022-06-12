@@ -26,10 +26,10 @@ void HostalController::ingresarDatosHostal(string nom,string dir,int tel){
 vector<string> HostalController::consultarTop3Hostales(){
     //Fabrica *fabrica = Fabrica::getInstance();
     ReservaController *r = ReservaController::getInstance();
-    set<DataHostal> CalifHostales = r->obtenerHostalesRegistrados();  
+    set<DtaHostal> CalifHostales = r->obtenerHostalesRegistrados();  
     vector<string> resultado;
-    set<DataHostal>::iterator it = CalifHostales.begin();
-    DataHostal primero, segundo, tercero, actual;  //recorro los primero tres hostales
+    set<DtaHostal>::iterator it = CalifHostales.begin();
+    DtaHostal primero, segundo, tercero, actual;  //recorro los primero tres hostales
     primero = *it;       
     ++it;
     actual = *it;
@@ -47,7 +47,7 @@ vector<string> HostalController::consultarTop3Hostales(){
         primero = *it;
     }
     ++it; //termine de asignar los primero tres que se que existen
-    set<DataHostal>::iterator i;
+    set<DtaHostal>::iterator i;
     for (i = it; it!=CalifHostales.end(); ++it){ //para los que quedan
         actual = *it;
         if (actual.getCalPromedio() > tercero.getCalPromedio()){
@@ -89,3 +89,16 @@ DtDescripcion HostalController::verDetalles(string nombreHostal){
     DtDescripcion d(comentarios,calificaciones);
     return d;
 }
+
+set<DtaHostal> HostalController::obtener_Hostales_Registrados(){
+    set<DtaHostal> res;
+    for (std::map<string,Hostal*>::iterator it = hostales.begin(); it != hostales.end(); ++it){
+        string nombre = it->second->getNombre();
+        string direccion = it->second->getDireccion();
+        float promCal = it->second->getPromedio();
+        DtaHostal d(nombre, direccion, promCal);
+        res.insert(d);
+    }
+    return res;
+}
+

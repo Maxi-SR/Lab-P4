@@ -5,8 +5,11 @@
 
 using namespace std;
 
-set<DataHostal> ReservaController::obtenerHostalesRegistrados(){
+class DtaHostal;
+
+set<DtaHostal> ReservaController::obtenerHostalesRegistrados(){
     HostalController *h = HostalController::getInstance();
-    
+    set<DtaHostal> res = h->obtener_Hostales_Registrados();
+    return res;
 }
 

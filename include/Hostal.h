@@ -40,6 +40,7 @@ public:
 	void crearCalificacion(string, int);
 	set<Reserva> getReservas();
 	virtual ~Hostal();
+	float getPromedio();
 };
 
 #endif
