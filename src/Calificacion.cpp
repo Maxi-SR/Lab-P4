@@ -43,5 +43,5 @@ void Calificacion::borrarRespuestas(){
 }
 
 Calificacion::~Calificacion(){
-    
+    delete this->Respuesta;
 }

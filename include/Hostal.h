@@ -27,8 +27,8 @@ public:
 	string getDireccion();
 	string getNombre();
 	int getTelefono();
-	set<Habitacion> getHabitaciones();
-	set<Calificacion> getCalificaciones();
+	set<Habitacion>* getHabitaciones();
+	set<Calificacion>* getCalificaciones();
 	void setDireccion(string);
 	void setNombre(string);
 	void setTelefono(int);

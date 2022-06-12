@@ -65,10 +65,9 @@ vector<string> HostalController::consultarTop3Hostales(){
             }
         }
     }
-    resultado.push_back(primero.getNombre()); //esto accede al nombre del hostal?
-    resultado.push_back(segundo.getNombre()); //necesito saber como inserta, si no puede ser que primero no quede primero
-    resultado.push_back(tercero.getNombre()); //ARREGLO???*/
-    vector<string> resultado;
+    resultado.push_back(primero.getNombre()); 
+    resultado.push_back(segundo.getNombre()); 
+    resultado.push_back(tercero.getNombre()); 
     return resultado;
 }
 
