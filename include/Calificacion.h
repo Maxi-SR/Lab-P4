@@ -14,18 +14,18 @@ class Calificacion{
 		int idCalificacion;
 		int calificacion;
 		string comentario;
-		set<Responde> Respuestas;
+		Responde* Respuesta;
 	public:
 		Calificacion(int, int, string);
 		int getCalificacion();
 		string getComentario();
-		set<Responde> getRespuestas();
-		void setRespuestas(set<Responde>);
+		Responde* getRespuestas();
+		void setRespuestas(Responde*);
 		bool noRespuesta();
 		DataComentario darDatos();
 		void responder(string);
 		int getIdCalificacion();
-		float obtenerPromedioCalificaciones();
+		//float obtenerPromedioCalificaciones();
 		void borrarRespuestas();
 		 ~Calificacion();
 };

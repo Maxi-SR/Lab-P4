@@ -14,20 +14,21 @@ string Calificacion::getComentario(){
     return this->comentario;
 }
 
-set<Responde> Calificacion::getRespuestas(){
-    return this->Respuestas;
+Responde* Calificacion::getRespuestas(){
+    return this->Respuesta;
 }
 
-void Calificacion::setRespuestas(set<Responde> r){
-    this->Respuestas = r;
+void Calificacion::setRespuestas(Responde* r){
+    this->Respuesta = r;
 }
 
 bool Calificacion::noRespuesta(){
-    return (this->Respuestas.empty());
+    return (this->Respuesta != NULL);
 }
 
 DataComentario Calificacion::darDatos(){
     DataComentario res(this->idCalificacion, this->comentario);
+    return res;
 }
 
 void Calificacion::responder(string respuesta){
@@ -38,11 +39,7 @@ int Calificacion::getIdCalificacion(){
 }
 
 void Calificacion::borrarRespuestas(){
-    //llamar al destructor de Responde?
-    set<Responde>::iterator it;
-    for (it = this->Respuestas.begin(); it != this->Respuestas.end(); ++it){
-        this->Respuestas.erase(it);
-    }
+    delete this->Respuesta;
 }
 
 Calificacion::~Calificacion(){
