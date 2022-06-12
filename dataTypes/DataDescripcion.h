@@ -7,10 +7,7 @@
 
 using namespace std;
 
-
-
-class DataDescripcion: public DtDescripcion
-{
+class DataDescripcion: public DtDescripcion {
 private:
 	float promedio;
 	DataHabitacion habitacion;

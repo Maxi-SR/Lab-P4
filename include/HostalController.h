@@ -36,7 +36,7 @@ public:
 	void cancelarAsignacion();
 	void confirmarAsignacion();
 	vector<string> consultarTop3Hostales();
-	DataDescripcion verDetalles(string);
+	DtDescripcion verDetalles(string);
 	void ingresarEmailHuesped(string);
 	set<DataEstadia> obtenerEstadiasFinalizadasHuesped();
 	void seleccionarEstadia(int);

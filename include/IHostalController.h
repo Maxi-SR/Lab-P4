@@ -27,7 +27,7 @@ public:
 	virtual void cancelarAsignacion() = 0;
 	virtual void confirmarAsignacion() = 0;
 	virtual vector<string> consultarTop3Hostales() = 0;//cambie aca tenia set
-	virtual DataDescripcion verDetalles(string) = 0;
+	virtual DtDescripcion verDetalles(string) = 0;
 	virtual void ingresarEmailHuesped(string) = 0;
 	virtual set<DataEstadia> obtenerEstadiasFinalizadasHuesped() = 0;
 	virtual void seleccionarEstadia(int) = 0;

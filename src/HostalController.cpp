@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class DataDescripcion;
+class DtDescripcion;
 
 void HostalController::ingresarDatosHostal(string nom,string dir,int tel){
 
@@ -71,23 +71,21 @@ vector<string> HostalController::consultarTop3Hostales(){
     return resultado;
 }
 
-DataDescripcion HostalController::verDetalles(string nombreHostal){
+DtDescripcion HostalController::verDetalles(string nombreHostal){
     std::map<string, Hostal*>::iterator it;
     it = hostales.find(nombreHostal);
     Hostal* h = it->second;
-    set<Calificacion> cal = h->getCalificaciones();
+    set<Calificacion> *cal = h->getCalificaciones();
     set<int> calificaciones;
     set<string> comentarios;
     //recorrer el set de calificaciones
-    for (std::set<Calificacion>::iterator it = cal.begin(); it!=cal.end(); ++it){
+    for (std::set<Calificacion>::iterator it = cal->begin(); it!=cal->end(); ++it){
         Calificacion c = *it;
         int cal = c.getCalificacion();
         string com = c.getComentario();
         calificaciones.insert(cal);
         comentarios.insert(com);
     }
-    DataHabitacion hab;
-    float f = -1;
-    DataDescripcion d(comentarios,calificaciones,f,hab);
+    DtDescripcion d(comentarios,calificaciones);
     return d;
 }
