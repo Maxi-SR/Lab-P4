@@ -31,7 +31,7 @@ public:
 	set<DataReserva> obtenerReservas();
 	void cancelarBajaDeReserva();
 	void confirmarBajaDeReserva();
-	DataReserva verReservaAsociada();
+	DataReserva *verReservaAsociada();
 };
 
 #endif

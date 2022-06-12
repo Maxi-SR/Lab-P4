@@ -11,6 +11,15 @@
 
 using namespace std;
 
+class Hostal;
+class Responde;
+class Notificacion;
+class Reserva;
+class Estadia;
+class Calificacion;
+class Habitacion;
+class DataReserva;
+
 // agregar public observer
 class Empleado : public Usuario, public Observer
 {
@@ -31,6 +40,8 @@ public:
 	set<Notificacion> getNotificaciones();
 	void setNotificaciones(Notificacion);
 	void Notificar(Notificacion n);
+	DataReserva *getDatos();
+	DataUsuario *getDataUsuario();
 	~Empleado();
 };
 

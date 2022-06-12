@@ -32,7 +32,7 @@ public:
 	bool existeRespuestaEmpleado();
 	int verCalificacionEstadia();
 	set<DataComentario> verRespuestaEstadia();
-	DataReserva verReservaAsociada();
+	DataReserva *verReservaAsociada();
 	int confirmarConsultaDeEstadia();
 	void ingresarMensaje(Calificacion, string);
 	void getEstadia(Estadia);

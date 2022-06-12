@@ -13,6 +13,7 @@ private:
 public:
 	ReservaGrupal(int, DataFecha, DataFecha, EstadoReserva, float, int);
 	int getCanthuespedes();
+	DataReserva *getDatos();
 };
 
 #endif

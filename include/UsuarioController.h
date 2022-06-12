@@ -16,6 +16,7 @@ class UsuarioController : public IUsuarioController
 private:
 	set<Huesped> huespedes;
 	set<Empleado> empleados;
+	static UsuarioController *instancia;
 
 public:
 	static UsuarioController *getInstance();

@@ -9,6 +9,7 @@ class ReservaIndividual : public Reserva
 {
 public:
 	ReservaIndividual(int, DataFecha, DataFecha, EstadoReserva, float);
+	DataReserva *getDatos();
 };
 
 #endif

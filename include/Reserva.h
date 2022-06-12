@@ -10,7 +10,7 @@
 
 class Reserva
 {
-private:
+protected:
 	int codigo;
 	DataFecha checkIn;
 	DataFecha checkOut;
@@ -35,7 +35,7 @@ public:
 	void setEstado(EstadoReserva);
 	int obtenerIdReserva();
 	void cerrarReserva();
-	virtual DataReserva getDatos() = 0;
+	virtual DataReserva *getDatos() = 0;
 	virtual ~Reserva(){};
 };
 

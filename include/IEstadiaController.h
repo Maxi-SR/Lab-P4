@@ -19,7 +19,7 @@ public:
 	virtual bool existeRespuestaEmpleado() = 0;
 	virtual int verCalificacionEstadia() = 0;
 	virtual set<DataComentario> verRespuestaEstadia() = 0;
-	virtual DataReserva verReservaAsociada() = 0;
+	virtual DataReserva *verReservaAsociada() = 0;
 	virtual int confirmarConsultaDeEstadia() = 0;
 };
 
