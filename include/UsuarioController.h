@@ -14,7 +14,7 @@ using namespace std;
 class UsuarioController : public IUsuarioController
 {
 private:
-	set<Huesped> huespedes;
+	map<string,Huesped*> huespedes;
 	set<Empleado> empleados;
 	static UsuarioController *instancia;
 
@@ -42,6 +42,7 @@ public:
 	void asignarHuespedReserva(Huesped);
 	void ingresarMensaje(Calificacion, string);
 	string darHostalTrabaja(string);
+	Huesped* getHuespedes(string);
 };
 
 #endif

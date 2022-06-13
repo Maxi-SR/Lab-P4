@@ -1,4 +1,5 @@
 #include "ReservaController.h"
+#include "../include/ReservaIndividual.h"
 #include "Fabrica.h"
 #include <map>
 #include <set>
@@ -30,4 +31,33 @@ set<int> ReservaController::obtenerHabitacionesDisponibles(){
 set<int> ReservaController::obtenerHabitacionesDisponibles(){
     HostalController *h = HostalController::getInstance();
     return h->obtenerHabitacionesDisponibles();
+}
+
+void ReservaController::seleccionarHabitacion(int numHab){
+    std::map<int, Habitacion*>::iterator it;
+    it = habitaciones.find(numHab);
+    this->recordada = it->second;
+}
+
+set<DataHuesped> ReservaController::obtenerHuepedesRegistrados(){
+    UsuarioController *u = UsuarioController::getInstance();
+    return u->obtenerHuespedesRegistrados();
+}
+
+void ReservaController::seleccionarHuesped(string email){
+    UsuarioController *u = UsuarioController::getInstance();
+    Huesped* h = u->getHuespedes(email);
+    this->recordado = h;
+}
+
+void ReservaController::cancelarAsignacion(){
+    delete this->recordado;
+    delete this->recordada;
+}
+
+void ReservaController::confirmarAsignacion(){
+    UsuarioController *u = UsuarioController::getInstance();
+    //como genero el codigo??
+    if (this->tipo == 0)
+        ReservaIndividual nueva(this->checkIn, this->checkOut, this->recordada, this->recordado);     
 }

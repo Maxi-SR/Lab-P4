@@ -115,8 +115,10 @@ set<int> HostalController::obtenerHabitacionesDisponibles(){
     set<int> res;
     set<Habitacion>* habs = this->recordado->getHabitaciones();
     for (std::set<Habitacion>::iterator it = habs->begin(); it != habs->end(); ++it){
-        if (it->getReservas(this->checkIn, this->checkOut)) //me dice si la habitacion esta disponible para esas fechas
-            res.insert(it->getNumHab());       
+        Habitacion actual = *it;
+        if (actual.getReservas(this->checkIn, this->checkOut)){ //me dice si la habitacion esta disponible para esas fechas
+            int num = actual.getNumHab();
+            res.insert(num);       
     }
     return res;
 }

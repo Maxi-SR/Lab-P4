@@ -1,4 +1,5 @@
 #include "../include/UsuarioController.h"
+#include <map>
 
 class Fabrica;
 
@@ -68,5 +69,24 @@ void UsuarioController::ingresarDatoHuesped(bool finger){
 
 // void UsuarioController::darAltaUsr(){
 // }
+
+set<DataHuesped> UsuarioController::obtenerHuespedesRegistrados(){
+    set<DataHuesped> res;
+    for (std::map<string, Huesped*>::iterator it = this->huespedes.begin(); it != this->huespedes.end(); ++it){
+        Huesped *actual = it->second;
+        string nombre = actual->getNombre();
+        string email = actual->getEmail();
+        bool finger = actual->getFinger();
+        DataHuesped h(nombre, email, finger);
+        res.insert(h);
+    }
+    return res;
+}
+
+Huesped* UsuarioController::getHuespedes(string email){
+    std::map<string, Huesped*>::iterator it;
+    it = huespedes.find(email);
+    return it->second;
+}
 
 
