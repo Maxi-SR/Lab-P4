@@ -10,6 +10,7 @@ private:
 	int dia, mes, anio, hora;
 
 public:
+	DataFecha();
 	DataFecha(int, int, int, int);
 	int getDia();
 	int getMes();

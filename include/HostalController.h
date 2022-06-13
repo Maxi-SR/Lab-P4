@@ -22,7 +22,9 @@ class HostalController : public IHostalController
 private:
 	map<string, Hostal*> hostales;
 	Hostal* recordado;
-	
+	DataFecha checkIn;
+	DataFecha checkOut;
+
 public:
 	static HostalController *getInstance();
 	void ingresarDatosHostal(string, string, int);

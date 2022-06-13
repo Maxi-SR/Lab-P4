@@ -15,7 +15,7 @@ private:
 	set<Reserva> reservas;
 
 public:
-	Habitacion(int, float, int, Hostal);
+	Habitacion(int, float, int, Hostal*);
 	int getNumHab();
 	float getPrecio();
 	int getCapacidad();
@@ -25,7 +25,7 @@ public:
 	float setPrecio();
 	int setCapacidad();
 	set<Reserva> setReservas();
-	set<Reserva> getReservas(DataFecha, DataFecha);
+	bool getReservas(DataFecha, DataFecha); //me dice si la habitacion esta disponible para esas fechas
 	~Habitacion();
 };
 

@@ -21,6 +21,7 @@ protected:
 	set<Huesped> huespedes;
 	// Huesped* huesped;
 public:
+	Reserva();
 	Reserva(int, DataFecha, DataFecha, Habitacion, Huesped);
 	// int getCodigo();
 	DataFecha getCheckIn();
