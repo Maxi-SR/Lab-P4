@@ -102,3 +102,8 @@ set<DtaHostal> HostalController::obtener_Hostales_Registrados(){
     return res;
 }
 
+void HostalController::seleccionarHostal(string nombreHostal, DataFecha checkIn, DataFecha checkOut, bool tipo){
+    std::map<string, Hostal*>::iterator it;
+    it = hostales.find(nombreHostal);
+    this->recordado = it->second;
+}

@@ -21,12 +21,14 @@ class HostalController : public IHostalController
 {
 private:
 	map<string, Hostal*> hostales;
-
+	Hostal* recordado;
+	
 public:
 	static HostalController *getInstance();
 	void ingresarDatosHostal(string, string, int);
 	set<string> obtenerNombresHostalesRegistrados();
 	set<DataHostal> obtenerHostalesRegistrados();
+	set<DtaHostal> obtener_Hostales_Registrados();
 	void seleccionarHostal(string);
 	void ingresarDatosHab(int, float, int);
 	void darAltaHabitacion();
