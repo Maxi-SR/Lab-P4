@@ -16,11 +16,12 @@ public:
 	int getMes();
 	int getAnio();
 	int getHora();
-	void getDia(int);
-	void getMes(int);
-	void getAnio(int);
-	void getHora(int);
+	void setDia(int);
+	void setMes(int);
+	void setAnio(int);
+	void setHora(int);
 	bool operator==(DataFecha);
+	bool operator<(DataFecha);
 };
 
 ostream &operator<<(ostream &os, DataFecha &f);

@@ -13,11 +13,15 @@ class ReservaController : public IReservaController
 {
 private:
 	set<Reserva> reservas;
+	map<int, Habitacion*> habitaciones;
 	string nombre;
 	DataFecha checkIn;
 	DataFecha checkOut;
 	bool tipo;
-	
+	Habitacion* recordada;
+	Huesped* recordado;
+	int codigo;
+
 public:
 	static ReservaController *getInstance();
 	set<DtaHostal> obtenerHostalesRegistrados();

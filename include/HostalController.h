@@ -24,6 +24,7 @@ private:
 	Hostal* recordado;
 	DataFecha checkIn;
 	DataFecha checkOut;
+	map<int, Habitacion*> habitaciones;
 
 public:
 	static HostalController *getInstance();
@@ -52,6 +53,7 @@ public:
 	DataHostal obtenerInformacionBasicaHostal();
 	// set<DataHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
+	map<int, Habitacion*> obtener_Habitaciones_Disponibles();
 	set<int> obtenerHabitacionesDisponibles();
 };
 

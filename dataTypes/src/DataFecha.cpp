@@ -30,3 +30,8 @@ int DataFecha::getHora(){
 bool DataFecha::operator==(DataFecha f){
     return (this->dia == f.getDia() && this->mes == f.getMes() && this->anio == f.getAnio() && this->hora == f.getHora());
 }
+
+bool DataFecha::operator<(DataFecha f){
+    return (f.getAnio() < this->anio || (f.getAnio() == this->anio && f.getMes() < this->mes) || (f.getAnio() == this->anio && f.getMes() == this->mes && f.getDia() < this->dia) || (f.getAnio() == this->anio && f.getMes() == this->mes && f.getDia() == this->dia && f.getHora() < this->hora));
+}
+

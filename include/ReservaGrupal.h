@@ -11,9 +11,11 @@ private:
 	int canthuespedes;
 
 public:
-	ReservaGrupal(int, DataFecha, DataFecha, EstadoReserva, float, int);
+	ReservaIndividual(int, DataFecha, DataFecha, Habitacion*, Huesped*, int);
 	int getCanthuespedes();
 	DataReserva *getDatos();
+	float getPrecio();
+	~ReservaGrupal();
 };
 
 #endif

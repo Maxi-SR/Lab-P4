@@ -21,6 +21,7 @@ void ReservaController::seleccionarHostal(string nombre, DataFecha checkIn, Data
 	this->checkIn = checkIn;
 	this->checkOut = checkOut;
 	this->tipo = tipo;
+    //this->codigo = 0;
 }
 
 set<int> ReservaController::obtenerHabitacionesDisponibles(){
@@ -34,9 +35,8 @@ set<int> ReservaController::obtenerHabitacionesDisponibles(){
 }
 
 void ReservaController::seleccionarHabitacion(int numHab){
-    std::map<int, Habitacion*>::iterator it;
-    it = habitaciones.find(numHab);
-    this->recordada = it->second;
+    HostalController *h = HostalController::getInstance(); 
+    this->recordada = h->seleccionarHabitacion(numHab);
 }
 
 set<DataHuesped> ReservaController::obtenerHuepedesRegistrados(){
@@ -47,17 +47,27 @@ set<DataHuesped> ReservaController::obtenerHuepedesRegistrados(){
 void ReservaController::seleccionarHuesped(string email){
     UsuarioController *u = UsuarioController::getInstance();
     Huesped* h = u->getHuespedes(email);
-    this->recordado = h;
+    this->recordado.push_back(h);
 }
 
 void ReservaController::cancelarAsignacion(){
-    delete this->recordado;
     delete this->recordada;
 }
 
 void ReservaController::confirmarAsignacion(){
     UsuarioController *u = UsuarioController::getInstance();
     //como genero el codigo??
-    if (this->tipo == 0)
-        ReservaIndividual nueva(this->checkIn, this->checkOut, this->recordada, this->recordado);     
+    if (this->tipo == 0){
+        ReservaIndividual nueva(this->codigo, this->checkIn, this->checkOut, this->recordada, this->recordado.front());     
+        this->reservas.insert(nueva);
+        this->recordado.front()->agregarReserva(&nueva); //unico huesped
+    }
+    else {
+        ReservaGrupal nueva(this->codigo, this->checkIn, this->checkOut, this->recordada, this->recordado, this->recordado.size());
+        this->reservas.insert(nueva);
+        for (std::vector<Huesped*>::iterator it = this->recordado.begin(); it != this->recordado.end(); ++it){
+            Huesped* actual = *it;
+            actual->agregarReserva(&nueva);
+        }
+    }
 }

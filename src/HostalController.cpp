@@ -110,15 +110,17 @@ void HostalController::seleccionarHostal(string nombreHostal, DataFecha checkIn,
     this->checkOut = checkOut;
 }
 
-set<int> HostalController::obtenerHabitacionesDisponibles(){
+map<int,Habitacion*> HostalController::obtener_Habitaciones_Disponibles(){
     //tengo guardado el hostal en memoria
-    set<int> res;
+    map<int,Habitacion*> res;
     set<Habitacion>* habs = this->recordado->getHabitaciones();
     for (std::set<Habitacion>::iterator it = habs->begin(); it != habs->end(); ++it){
         Habitacion actual = *it;
         if (actual.getReservas(this->checkIn, this->checkOut)){ //me dice si la habitacion esta disponible para esas fechas
             int num = actual.getNumHab();
-            res.insert(num);       
+            res.insert(std::pair<int,Habitacion*>(num,&actual)); 
+        }      
     }
+    this->habitaciones = res;
     return res;
 }
