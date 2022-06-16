@@ -7,6 +7,16 @@ using namespace std;
 
 class DtDescripcion;
 
+class DatosCalyComEst{
+    public:
+        list<string> datos;
+        int idSelect;
+        Estadia *est;
+};
+
+DatosCalyComEst CalyComEst;
+    
+
 void HostalController::ingresarDatosHostal(string nom,string dir,int tel){
 
     //el controlador se encarga de decirle a 
