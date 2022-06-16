@@ -10,11 +10,11 @@
 
 int main(){
     Fabrica *fabrica = Fabrica::getInstance();
-    //IEstadiaController  *estadia = fabrica->getInstanceEstadiaController();
-    //IUsuarioController *usuario = fabrica ->getInstanceUsuarioController();
-    //IReservaController *reserva = fabrica->getInstanceReservaController();
+    IEstadiaController  *estadia = fabrica->getInstanceEstadiaController();
+    IUsuarioController *usuario = fabrica ->getInstanceUsuarioController();
+    IReservaController *reserva = fabrica->getInstanceReservaController();
     IHostalController *hostal = fabrica->getInstanceHostalController();
-    //IReloj * reloj = fabrica->getInstanceReloj();
+    IReloj * reloj = fabrica->getInstanceReloj();
     int opcion;
         cout << "01: Alta de usuario" << endl;
         cout << "02: Alta de hostal" << endl;
@@ -252,6 +252,20 @@ int main(){
             break;
             
             case 20:{
+                cout << "Para modificar la Fecha del Sistema ingrese los siguientes datos:";
+                int dia;
+                int mes;
+                int anio;
+                int hora;
+                cout << "Dia:";
+                cin >> dia;
+                cout << "Mes:";
+                cin >> mes;
+                cout << "Año:";
+                cin >> anio;
+                cout << "Hora:";
+                cin >> hora;
+                reloj->modificarFechaSistema(dia, mes, anio, hora);
                 
             }
             break;
