@@ -36,7 +36,7 @@ public:
 	Hostal *getHostal();
 	void setHostal(Hostal);
 	set<Responde> getRespuestas();
-	void setRespuestas(Responde);
+	void addRespuestas(Responde);
 	set<Notificacion> getNotificaciones();
 	void setNotificaciones(Notificacion);
 	void Notificar(Notificacion n);

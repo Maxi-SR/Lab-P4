@@ -14,6 +14,12 @@ set<DtaHostal> ReservaController::obtenerHostalesRegistrados(){
     return res;
 }
 
+set<string> ReservaController::obtenerNombresHostalesRegistrados(){
+    HostalController *h = HostalController::getInstance();
+    set<string> ret = h->obtenerNombresHostalesRegistrados();
+    return ret;
+}
+
 void ReservaController::seleccionarHostal(string nombre, DataFecha checkIn, DataFecha checkOut, bool tipo){
     HostalController *h = HostalController::getInstance();
     h->seleccionarHostal(nombre, checkIn, checkOut, tipo); 
@@ -21,6 +27,48 @@ void ReservaController::seleccionarHostal(string nombre, DataFecha checkIn, Data
 	this->checkIn = checkIn;
 	this->checkOut = checkOut;
 	this->tipo = tipo;
+    //this->codigo = 0;
+}
+
+void ReservaController:: seleccionarHostal(strin nombreHostal){
+    this->datos.push_back(nombreHostal);
+}
+void ReservaController:: ingresarEmailHuesped(string emailHuesped){
+    this->datos.push_back(emailHuesped);
+}
+
+set<int> ReservaController:: listarReservas(){
+    map<int,Reserva*> :: iterator itR;
+    set<int> ret;
+    set<int> :: iterator it;
+    it=ret.end();
+    for(itR=reservas.begin();itR!=reservas.end();++itR){
+        EstadoReserva er=itR->getEstado();
+        if (er!=Cancelada){
+            ret.insert(it,itR->obtenerIdReserva());
+            ++it;
+        }
+    }
+    return ret;
+}
+
+void ReservaController:: seleccionarReserva(int idR){
+    UsuarioController *u = UsuarioController::getInstance();
+    map<int,Reserva*> :: iterator itR;
+    itR=reservas.find(idR);
+    itR->setEstado(Cerrada);
+    u->crearEstadia(*itR,datos.back());
+
+
+}
+
+void ReservaController::seleccionarHostal(string nombre, DataFecha checkIn, DataFecha checkOut, bool tipo){
+    HostalController *h = HostalController::getInstance();
+    h->seleccionarHostal(nombre, checkIn, checkOut, tipo); 
+    this->nombre = nombre;
+    this->checkIn = checkIn;
+    this->checkOut = checkOut;
+    this->tipo = tipo;
     //this->codigo = 0;
 }
 

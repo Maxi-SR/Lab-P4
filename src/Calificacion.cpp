@@ -4,6 +4,7 @@ Calificacion::Calificacion(int id, int cal, string com){
     this->idCalificacion = id;
     this->calificacion = cal;
     this->comentario = com;
+    this->Respuesta=NULL;
 }
 
 int Calificacion::getCalificacion(){
@@ -23,16 +24,18 @@ void Calificacion::setRespuestas(Responde* r){
 }
 
 bool Calificacion::noRespuesta(){
-    return (this->Respuesta != NULL);
+    return (this->Respuesta == NULL);
 }
 
 DataComentario Calificacion::darDatos(){
-    DataComentario res(this->idCalificacion, this->comentario);
+    DataComentario ret=DataComentario(idCalificacion,comentario);
     return res;
 }
 
-void Calificacion::responder(string respuesta){
-}
+
+void Calificacion :: setRespuesta(Responde *respuesta){
+    Respuesta=respuesta;
+        }
 
 int Calificacion::getIdCalificacion(){
     return this->idCalificacion;

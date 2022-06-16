@@ -124,3 +124,88 @@ map<int,Habitacion*> HostalController::obtener_Habitaciones_Disponibles(){
     this->habitaciones = res;
     return res;
 }
+
+
+//------Calificar Estadia ------//
+set<string> HostalController::obtenerNombresHostalesRegistrados(){
+    set<string> ret;
+    for (std::map<string,Hostal*>::iterator it = hostales.begin(); it != hostales.end(); ++it){
+        string nombre = it->second->getNombre();
+        ret.insert(nombre);
+    }
+    return ret;
+}
+
+void HostalController::seleccionarHostal(string nombreHostal){
+    CalyComEst.datos.push_back(nombreHostal);
+}
+
+void HostalController::ingresarEmailHuesped(string emailHuesped){
+    CalyComEst.datos.push_back(emailHuesped);
+}
+
+set<DataEstadia> HostalController::obtenerEstadiasFinalizadasHuesped(){
+ UsuarioController *u= UsuarioController :: getInstance();
+ set<DataEstadia> ret = u->obtenerEstadiasFinalizadasHuesped();
+ return ret;
+
+}
+
+void HostalController::seleccionarEstadia(int idEstadia){
+    CalyComEst.idSelect=idEstadia;
+}
+
+void HostalController::ingresarMensaje(string comentario, int calif){
+    EstadiaController *e = EstadiaController :: getInstance();
+    map<string,Estadia*> :: iterator itE;
+    itE=e->estadias;
+    string nombreHostal=CalyComEst.datos.front();
+    Hostal* h=hostales.find(nombreHostal)
+    Calificacion ingresar= Calificacion(this->codigoCalificacion, calif, comentario);
+    map<string,Calificacion*> :: iterator itC;
+    itC=h->calificaciones->second.end();
+    h->calificaciones->insert(itC,ingresar);
+
+    CalyComEst.datos.pop_front();
+
+    e->ingresarMensaje(ingresar,CalyComEst.datos.front(),CalyComEst.idSelect);//agrego idEstadia seleccionada
+
+//lierar memoria
+    while (!CalyComEst.datos.empty()){
+        CalyComEst.datos.pop_front();
+    }
+}
+
+//--------Comentar Calificacion-------//
+void HostalController::ingresarEmail(string emailEmpleado){
+    CalyComEst.datos.push_back(emailEmpleado);
+
+}
+set<DataComentario> HostalController::obtenerComentariosSInRespuesta(){
+    
+    UsuarioController *u = UsuarioController::getInstance();
+
+    Empleado* e;
+    e= u->empleados.find(CalyComEst.datos.front());
+
+    Hostal * host=e->getHostal();
+    string nombreHostal=host->getNombre();
+
+    map<string,Hostal*> :: iterator itH;
+    itH=hostales.find(nombreHostal);
+    set<DataComentario> ret = itH->darComSinResp();
+    return ret;
+
+}
+
+void HostalController::seleccionComentario(int idComentario){
+    CalyComEst.idSelect=idComentario;
+
+}
+void HostalController::ingresarComentario(string comentario){
+    UsuarioController *u = UsuarioController::getInstance();
+    string hostal=u->darHostalTrabaja(CalyComEst.datos.front());
+    Hostal *ho=hostales->second->find(hostal);
+    ho->ingresarCom(comentario, CalyComEst.idSelect);
+
+}

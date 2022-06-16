@@ -19,13 +19,12 @@ class Calificacion{
 		Calificacion(int, int, string);
 		int getCalificacion();
 		string getComentario();
-		Responde* getRespuestas();
-		void setRespuestas(Responde*);
+		Responde* getRespuesta();
 		bool noRespuesta();
 		DataComentario darDatos();
-		void responder(string);
+		void setRespuesta(Responde*);
 		int getIdCalificacion();
-		//float obtenerPromedioCalificaciones();
+		float obtenerPromedioCalificaciones();
 		void borrarRespuestas();
 		 ~Calificacion();
 };

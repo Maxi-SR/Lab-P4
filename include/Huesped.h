@@ -14,6 +14,8 @@ class Estadia;
 class Usuario;
 class Reserva;
 class DataReserva;
+class Calificacion;
+class Habitacion;
 
 class Huesped : public Usuario
 {

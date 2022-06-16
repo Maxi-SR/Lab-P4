@@ -33,12 +33,34 @@ set<Calificacion>* Hostal::getCalificaciones(){
 }
 
 set<DataComentario> Hostal::darComSinResp(){
-
+    set<DataComentario> ret;
+    set<DataComentario> :: iterator it;
+    it=ret.begin();
+    set<Calificacion> :: iterator itC;
+    for(itC=calificaciones->second->begin();itC!=calificaciones->second->end();++itC){
+       if (itC->noRespuesta()){
+            DataComentario dc=itC->darDatos();
+            ret.insert(it,dc);
+            it++;
+        }
+    }
+    return ret;
 }
 
-void Hostal::ingresarCom(string com){
+void Hostal::ingresarCom(string com, int idCom, string email){
+    map<int,Calificacion*> :: iterator itC;
+    itC=this->calificaciones->find(idCom);
+//ENCUENTRO LA INSTANCIA EMPLEADO
+    UsuarioController *u=UsuarioController :: getInstancia();
+    map<string,Empleado*> :: iterator itE;
+    itE=u->empleados.find(email);
+//CREO LA INSTANCIA RESPONDE y en responde se asocia el empleado y la calificacion al responde
+    Responde *r=Responde(com, itE, itC);//acá asocio r con calificacion y empleado
+    itE->addRespuestas(r);
+    itC->setRespuesta(r);
     
 }
+
 
 DataHostal Hostal::getDataInfoBasicaHostal(){
 

@@ -12,10 +12,12 @@ class Responde {
 		Empleado* empl;
 		Calificacion* calif;
 	public:
+		Responde(string, Empleado*);
 		Responde(string, Empleado*, Calificacion*);
 		string getComentario();
 		Empleado* getEmpleado();
 		Calificacion* getCalificacion();
+		Calificacion* setCalificacion();
 		~Responde();
 };
 #endif

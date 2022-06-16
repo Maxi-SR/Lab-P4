@@ -3,9 +3,9 @@
 #include <string>
 
 #include "../dataTypes/DataFecha.h"
-#include "Huesped.h"
-#include "Reserva.h"
-#include "Calificacion.h"
+#include "../include/Huesped.h"
+#include "../include/Reserva.h"
+#include "../include/Calificacion.h"
 #include "../dataTypes/DataEstadia.h"
 using namespace std;
 
@@ -17,30 +17,30 @@ private:
 	Reserva *reserva;
 	Calificacion *calificacion;
 	int habitacion;
-	DataFecha checkIn;
-	DataFecha checkOut;
-	string codigoEstadia;
+	DataFecha* checkIn;
+	DataFecha* checkOut;
+	int codigoEstadia;
 	int codigoPromo;
 
 public:
-	Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
+	Estadia(string, Huesped, Reserva, int, DataFecha, int);
 	string getHostal();
 	Huesped *getHuesped();
 	Reserva *getReserva();
 	Calificacion *getCalificacion();
 	int getHabitacion();
-	DataFecha getCheckIn();
-	DataFecha getCheckOut();
-	string getCodigoEstadia();
+	DataFecha* getCheckIn();
+	DataFecha* getCheckOut();
+	int getCodigoEstadia();
 	int getCodigoPromo();
 	void setHostal(string);
 	void setHuesped(Huesped);
-	void setReserva(Reserva*);
+	void setReserva(Reserva);
 	void setCalificacion(Calificacion);
 	void setHabitacion(int);
 	void setCheckIn(DataFecha);
 	void setCheckOut(DataFecha);
-	void setCodigoEstadia(string);
+	void setCodigoEstadia(int);
 	void setCodigoPromo(int);
 	bool estaFinalizada();
 	DataEstadia obtenerDataEstadia();

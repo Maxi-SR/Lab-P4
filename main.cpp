@@ -85,7 +85,41 @@ int main(){
             }
             break;
             
-            case 7:{
+            case 7:{//REGISTRAR ESTADIA
+
+                cout << "Los Hostales registrados son:";
+                set<string> hostalesReg = reserva->obtenerHostalesRegistrados();
+
+                //MUESTRO HOSTALES REGISTRADOS
+                set<string>::iterator it;
+                for (it=hostalesReg.begin();it!=hostalesReg.end();++it){
+                    cout << *it << end;
+                }
+                //SELECCIONO HOSTAL
+                cout << "Ingrese el nombre del Hostal seleccionado";
+                string nombreHostal;
+                cin >> nombreHostal;
+                reserva->seleccionarHostal(nombreHostal);
+
+                //INGRESO EMAIL HUESPED
+                cout << "Ingrese el email del huesped";
+                string emailHuesped;
+                cin >> emailHuesped;
+                reserva->ingresarEmailHuesped(emailHuesped);
+
+                //MUESTRO RESERVAS
+                set<int> reservasReg = reserva->listarReservas();
+                set<int> :: iterator itR;
+                for (itR=reservasReg.begin();itR!=reservasReg.end();++itR){
+                    cout << *itR << endl;
+                }
+
+                //SELECCIONO RESERVA
+                cout << "Ingrese el id de la Reserva";
+                string idReserva;
+                cin >> idReserva;
+                reserva->seleccionarReserva(idReserva);
+
 
             }
             break;
@@ -95,12 +129,79 @@ int main(){
             }
             break;
             
-            case 9:{
+            case 9:{//CALIFICAR ESTADIA
+                cout << "Los Hostales registrados son:";
+                set<string> hostalesReg = hostal->obtenerHostalesRegistrados();
+
+                //MUESTRO HOSTALES REGISTRADOS
+                set<string>::iterator it;
+                for (it=hostalesReg.begin();it!=hostalesReg.end();++it){
+                    cout << *it << end;
+                }
+                //SELECCIONO HOSTAL
+                cout << "Ingrese el nombre del Hostal seleccionado";
+                string nombreHostal;
+                cin >> nombreHostal;
+                hostal->seleccionarHostal(nombreHostal);
+
+                //INGRESO EMAIL HUESPED
+                cout << "Ingrese el email del huesped";
+                string emailHuesped;
+                cin >> emailHuesped;
+                hostal->ingresarEmailHuesped(emailHuesped);
+
+                //OBTENER ESTADIAS FINALIZADAS
+                set<DataEstadia> estadiasFinalizadas = hostal->obtenerEstadiasFinalizadasHuesped();
+                set<DataEstadia> :: iterator itE;
+                for (itE=estadiasFinalizadas.begin();itE!=estadiasFinalizadas.end();++itE){
+                    cout << *itE << endl;
+                }
+
+                //SELECCIONO ESTADIA
+                cout << "Ingrese el id de la Estadia";
+                string idEstadia;
+                cin >> idEstadia;
+                hostal->seleccionarEstadia(idEstadia);
+
+
+                //INGRESO MENSAJE
+                cout << "Ingrese el Mensaje";
+                string mensaje;
+                cin >> mensaje;
+                cout << "Ingrese la Calificacion (entre 1 y 5)";
+                int calificacion;
+                cin >> calificacion;
+                hostal->ingresarMensaje(mensaje,calificacion);
+
 
             }
             break;
 
-            case 10:{
+            case 10:{//COMENTAR CALIFICACION
+                //INGRESO EMAIL EMPLEADO
+                cout << "Ingrese el email del empleado";
+                string emailEmpleado;
+                cin >> emailEmpleado;
+                hostal->ingresarEmail(emailEmpleado);
+
+                //OBTENER COMENTARIOS SIN RESPUESTA
+                set<DataComentario> comSinResp = hostal->obtenerComentariosSinRespuesta();
+                set<DataComentario> :: iterator it;
+                for (it=comSinResp.begin();it!=comSinResp.end();++it){
+                    cout << *it << endl;
+                }
+
+                //SELECCIONAR COMENTARIO
+                cout << "Ingrese el id del Comentario seleccionado";
+                int idComentario;
+                cin >> idComentario;
+                hostal->seleccionarComentario(idComentario);
+
+                //INGRESARCOMENTARIO
+                cout << "Ingrese su comentario";
+                string comentario;
+                cin >> comentario;
+                hostal->ingresarComentario(comentario);
                 
             }
             break;

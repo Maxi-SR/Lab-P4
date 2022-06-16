@@ -2,6 +2,7 @@
 #define RESERVACONTROLLER
 #include <string>
 #include <set>
+#include <list>
 #include "Reserva.h"
 #include "../dataTypes/DataHostal.h"
 #include "../dataTypes/DtaHostal.h"
@@ -19,11 +20,15 @@ private:
 	DataFecha checkOut;
 	bool tipo;
 	Habitacion* recordada;
+	list<string> datos;
 	Huesped* recordado;
-	int codigo;
+	int idCodigo;
 
 public:
 	static ReservaController *getInstance();
+	list<string> getDatos();
+	int getIdCodigo();
+	void setIdCodigo();
 	set<DtaHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
 	set<int> obtenerHabitacionesDisponibles();

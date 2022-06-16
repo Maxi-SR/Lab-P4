@@ -25,6 +25,7 @@ private:
 	DataFecha checkIn;
 	DataFecha checkOut;
 	map<int, Habitacion*> habitaciones;
+	int codigoCalificacion;
 
 public:
 	static HostalController *getInstance();
@@ -55,6 +56,8 @@ public:
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
 	map<int, Habitacion*> obtener_Habitaciones_Disponibles();
 	set<int> obtenerHabitacionesDisponibles();
+	int getCodigoCalificacion();
+	void setCodigoCalificacion();
 };
 
 #endif

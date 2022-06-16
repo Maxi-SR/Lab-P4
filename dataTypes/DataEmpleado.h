@@ -1,25 +1,25 @@
 #ifndef DATAEMPLEADO
 #define DATAEMPLEADO
-
-
+#include "../include/Cargo.h"
 #include "DataUsuario.h"
-#include "Cargo.h"
+#include <string>
 
 
-class DataEmpleado:public DataUsuario
-{
-private:
-    string hostal;
-    Cargo tipoCargo;
-public:
-    DataEmpleado(string,string,string,Cargo);
-    string getHostal();
-    Cargo getCargo();
-    ~DataEmpleado();
+using namespace std;
+
+
+
+
+class DataEmpleado : public DataUsuario{
+	private:
+		string hostal;
+		Cargo cargo;
+	public:
+		DataEmpleado();
+		DataEmpleado(string, string, string, Cargo);
+		string getHostal();
+		Cargo getCargo();
+
 };
-
-
-
-
 
 #endif

@@ -19,9 +19,8 @@ private:
 	string direccion;
 	int telefono;
 	set<Habitacion> *habitaciones; // no era un puntero a habitaciones, le puse yo(maxi) para poder hacer NULL
-	set<Calificacion> *calificaciones;//no era un puntero a calificaciones, le puse yo(maxi) para poder hacer NULL
+	map<Calificacion> *calificaciones;//no era un puntero a calificaciones, le puse yo(maxi) para poder hacer NULL
 	set<Reserva> *reservas;//no era un puntero a reservas, le puse yo(maxi) para poder hacer NULL
-
 public:
 	Hostal(string, string, int ,set<Habitacion > *, set<Calificacion> *, set<Reserva> *);
 	string getDireccion();
@@ -35,7 +34,7 @@ public:
 	// void setHabitacion(Habitacion);
 	// set<Calificacion> setCalificaciones();
 	set<DataComentario> darComSinResp();
-	void ingresarCom(string);
+	void ingresarCom(string,int,string);
 	DataHostal getDataInfoBasicaHostal();
 	void crearCalificacion(string, int);
 	set<Reserva> getReservas();
