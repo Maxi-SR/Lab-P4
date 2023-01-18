@@ -21,18 +21,12 @@ class HostalController : public IHostalController
 {
 private:
 	map<string, Hostal*> hostales;
-	Hostal* recordado;
-	DataFecha checkIn;
-	DataFecha checkOut;
-	map<int, Habitacion*> habitaciones;
-	int codigoCalificacion;
 
 public:
 	static HostalController *getInstance();
 	void ingresarDatosHostal(string, string, int);
 	set<string> obtenerNombresHostalesRegistrados();
 	set<DataHostal> obtenerHostalesRegistrados();
-	set<DtaHostal> obtener_Hostales_Registrados();
 	void seleccionarHostal(string);
 	void ingresarDatosHab(int, float, int);
 	void darAltaHabitacion();
@@ -42,7 +36,7 @@ public:
 	void cancelarAsignacion();
 	void confirmarAsignacion();
 	vector<string> consultarTop3Hostales();
-	DtDescripcion verDetalles(string);
+	DataDescripcion verDetalles(string);
 	void ingresarEmailHuesped(string);
 	set<DataEstadia> obtenerEstadiasFinalizadasHuesped();
 	void seleccionarEstadia(int);
@@ -54,10 +48,7 @@ public:
 	DataHostal obtenerInformacionBasicaHostal();
 	// set<DataHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
-	map<int, Habitacion*> obtener_Habitaciones_Disponibles();
 	set<int> obtenerHabitacionesDisponibles();
-	int getCodigoCalificacion();
-	void setCodigoCalificacion();
 };
 
 #endif

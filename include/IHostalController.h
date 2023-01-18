@@ -18,7 +18,6 @@ public:
 	virtual void ingresarDatosHostal(string, string, int) = 0;
 	virtual set<string> obtenerNombresHostalesRegistrados() = 0;
 	virtual set<DataHostal> obtenerHostalesRegistrados() = 0;
-	virtual set<DtaHostal> obtener_Hostales_Registrados() = 0;
 	virtual void seleccionarHostal(string) = 0;
 	virtual void ingresarDatosHab(int, float, int) = 0;
 	virtual void darAltaHabitacion() = 0;
@@ -28,7 +27,7 @@ public:
 	virtual void cancelarAsignacion() = 0;
 	virtual void confirmarAsignacion() = 0;
 	virtual vector<string> consultarTop3Hostales() = 0;//cambie aca tenia set
-	virtual DtDescripcion verDetalles(string) = 0;
+	virtual DataDescripcion verDetalles(string) = 0;
 	virtual void ingresarEmailHuesped(string) = 0;
 	virtual set<DataEstadia> obtenerEstadiasFinalizadasHuesped() = 0;
 	virtual void seleccionarEstadia(int) = 0;

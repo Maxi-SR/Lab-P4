@@ -14,16 +14,14 @@ class Estadia;
 class Usuario;
 class Reserva;
 class DataReserva;
-class Calificacion;
-class Habitacion;
 
 class Huesped : public Usuario
 {
 private:
 	bool finger;
 	Calificacion *calificacion;
-	set<Estadia*> estadias;
-	set<Reserva*> reservas;
+	set<Estadia> estadias;
+	set<Reserva> reservas;
 
 public:
 	Huesped(string, string, string, bool);
@@ -31,15 +29,14 @@ public:
 	void setFinger(bool);
 	Calificacion getCalificacion();
 	void setCalificacion(Calificacion);
-	set<Estadia*> getEstadias();
+	set<Estadia> getEstadias();
 	void setEstadias();
-	set<Reserva*> getReservas();
+	set<Reserva> getReservas();
 	set<DataDescripcion> obtenerEstadias();
 	bool estadiaUsrActiva();
 	void crearEstadia(Reserva *);
 	DataReserva *getDatos();
 	DataUsuario *getDataUsuario();
-	void agregarReserva(Reserva*);
 	~Huesped();
 };
 

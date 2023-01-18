@@ -13,7 +13,6 @@ protected:
 	string password;
 
 public:
-	Usuario();
 	Usuario(string, string, string);
 	string getEmail();
 	string getNombre();

@@ -18,7 +18,6 @@ class EstadiaController : public IEstadiaController
 private:
 	set<Estadia> estadias;
 	set<Habitacion> habitaciones;
-	int codigoEstadia;
 
 public:
 	static EstadiaController *getInstance();
@@ -35,7 +34,7 @@ public:
 	set<DataComentario> verRespuestaEstadia();
 	DataReserva *verReservaAsociada();
 	int confirmarConsultaDeEstadia();
-	void ingresarMensaje(Calificacion, string, int);
+	void ingresarMensaje(Calificacion, string);
 	void getEstadia(Estadia);
 };
 

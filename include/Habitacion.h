@@ -3,8 +3,6 @@
 #include <string>
 #include "Hostal.h"
 #include "Reserva.h"
-#include "../include/ReservaGrupal.h"
-#include "../include/ReservaIndividual.h"
 #include "../dataTypes/DataFecha.h"
 
 class Habitacion
@@ -14,20 +12,20 @@ private:
 	float precio;
 	int capacidad;
 	Hostal *hostal;
-	set<Reserva*> reservas;
+	set<Reserva> reservas;
 
 public:
-	Habitacion(int, float, int, Hostal*);
+	Habitacion(int, float, int, Hostal);
 	int getNumHab();
 	float getPrecio();
 	int getCapacidad();
 	Hostal *getHostal();
-	set<Reserva*> getReservas();
+	set<Reserva> getReservas();
 	int setNumHab();
 	float setPrecio();
 	int setCapacidad();
-	set<Reserva*> setReservas();
-	bool getReservas(DataFecha, DataFecha); //me dice si la habitacion esta disponible para esas fechas
+	set<Reserva> setReservas();
+	set<Reserva> getReservas(DataFecha, DataFecha);
 	~Habitacion();
 };
 

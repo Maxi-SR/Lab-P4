@@ -2,10 +2,8 @@
 #define RESERVACONTROLLER
 #include <string>
 #include <set>
-#include <list>
 #include "Reserva.h"
 #include "../dataTypes/DataHostal.h"
-#include "../dataTypes/DtaHostal.h"
 #include "../dataTypes/DataFecha.h"
 #include "../dataTypes/DataHuesped.h"
 #include "../dataTypes/DataReserva.h"
@@ -14,22 +12,10 @@ class ReservaController : public IReservaController
 {
 private:
 	set<Reserva> reservas;
-	map<int, Habitacion*> habitaciones;
-	string nombre;
-	DataFecha checkIn;
-	DataFecha checkOut;
-	bool tipo;
-	Habitacion* recordada;
-	list<string> datos;
-	Huesped* recordado;
-	int idCodigo;
 
 public:
 	static ReservaController *getInstance();
-	list<string> getDatos();
-	int getIdCodigo();
-	void setIdCodigo();
-	set<DtaHostal> obtenerHostalesRegistrados();
+	set<DataHostal> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
 	set<int> obtenerHabitacionesDisponibles();
 	void seleccionarHabitacion(int);

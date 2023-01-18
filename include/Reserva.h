@@ -18,18 +18,17 @@ protected:
 	float precio;
 	Habitacion *habitacion;
 	set<Estadia> estadias;
-	vector<Huesped*> huespedes;
+	set<Huesped> huespedes;
 	// Huesped* huesped;
 public:
-	Reserva();
-	Reserva(int, DataFecha, DataFecha, Habitacion*, Huesped*);
+	Reserva(int, DataFecha, DataFecha, Habitacion, Huesped);
 	// int getCodigo();
 	DataFecha getCheckIn();
 	DataFecha getCheckOut();
 	EstadoReserva getEstado();
 	virtual float getPrecio() = 0;
 	// Huesped getHuesped();
-	vector<Huesped*> getHuespedes();
+	set<Huesped> getHuespedes();
 	DataFecha setCheckIn(DataFecha);
 	DataFecha setCheckOut(DataFecha);
 	// void setHuesped(Huesped);

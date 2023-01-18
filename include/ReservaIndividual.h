@@ -8,10 +8,8 @@
 class ReservaIndividual : public Reserva
 {
 public:
-	ReservaIndividual(int, DataFecha, DataFecha, Habitacion*, Huesped*);
+	ReservaIndividual(int, DataFecha, DataFecha, EstadoReserva, float);
 	DataReserva *getDatos();
-	float getPrecio();
-	~ReservaIndividual();
 };
 
 #endif

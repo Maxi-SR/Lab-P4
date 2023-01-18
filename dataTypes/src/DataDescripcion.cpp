@@ -1,8 +1,8 @@
 #include "../DataDescripcion.h"
 #include <iostream>
 
-//DataDescripcion::DataDescripcion(){
-//}
+DataDescripcion::DataDescripcion(){
+}
 
 DataDescripcion::DataDescripcion(set<string> com, set<int> cal,float prom, DataHabitacion hab){
     this->comentarios = com;

@@ -16,5 +16,4 @@ class Notificacion {
 		int getPuntaje();
 		 ~Notificacion();
 };
-std::ostream& operator<<(std::ostream& os, Notificacion &n);
 #endif

@@ -4,7 +4,6 @@ Calificacion::Calificacion(int id, int cal, string com){
     this->idCalificacion = id;
     this->calificacion = cal;
     this->comentario = com;
-    this->Respuesta=NULL;
 }
 
 int Calificacion::getCalificacion(){
@@ -15,36 +14,37 @@ string Calificacion::getComentario(){
     return this->comentario;
 }
 
-Responde* Calificacion::getRespuestas(){
-    return this->Respuesta;
+set<Responde> Calificacion::getRespuestas(){
+    return this->Respuestas;
 }
 
-void Calificacion::setRespuestas(Responde* r){
-    this->Respuesta = r;
+void Calificacion::setRespuestas(set<Responde> r){
+    this->Respuestas = r;
 }
 
 bool Calificacion::noRespuesta(){
-    return (this->Respuesta == NULL);
+    return (this->Respuestas.empty());
 }
 
 DataComentario Calificacion::darDatos(){
-    DataComentario ret=DataComentario(idCalificacion,comentario);
-    return res;
+    DataComentario res(this->idCalificacion, this->comentario);
 }
 
-
-void Calificacion :: setRespuesta(Responde *respuesta){
-    Respuesta=respuesta;
-        }
+void Calificacion::responder(string respuesta){
+}
 
 int Calificacion::getIdCalificacion(){
     return this->idCalificacion;
 }
 
 void Calificacion::borrarRespuestas(){
-    delete this->Respuesta;
+    //llamar al destructor de Responde?
+    set<Responde>::iterator it;
+    for (it = this->Respuestas.begin(); it != this->Respuestas.end(); ++it){
+        this->Respuestas.erase(it);
+    }
 }
 
 Calificacion::~Calificacion(){
-    delete this->Respuesta;
+    
 }
