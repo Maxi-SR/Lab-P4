@@ -4,6 +4,9 @@
 using namespace std;
 
 #include "../dataTypes/DataUsuario.h"
+#include "Cargo.h"
+
+
 
 class Usuario
 {
@@ -13,15 +16,18 @@ protected:
 	string password;
 
 public:
-	Usuario(string, string, string);
-	string getEmail();
+	//Usuario();
+	string getEmail() {
+		return this->email;
+	};
 	string getNombre();
 	string getPassword();
 	void setEmail(string);
 	void setNombre(string);
 	void setPassword(string);
-	virtual DataUsuario *getDataUsuario() = 0;
-	~Usuario();
+	//virtual char *getCargo();
+	// virtual DataUsuario *getDataUsuario() = 0;
+	//~Usuario();
 };
 
 #endif

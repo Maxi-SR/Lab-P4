@@ -11,10 +11,10 @@ protected:
     string nombre;
     string direccion;
 public:
-    DatasHostal();
+
     string getNombre();
     string getDireccion();
-    ~DatasHostal();
+    // ~DatasHostal();
 };
 
 

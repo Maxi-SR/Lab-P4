@@ -22,11 +22,11 @@ IHostalController *Fabrica::getInstanceHostalController()
     return controlador;
 }
 
-IEstadiaController *Fabrica::getInstanceEstadiaController()
-{
-    IEstadiaController *controlador = EstadiaController::getInstance();
-    return controlador;
-}
+// IEstadiaController *Fabrica::getInstanceEstadiaController()
+// {
+//     IEstadiaController *controlador = EstadiaController::getInstance();
+//     return controlador;
+// }
 
 IReservaController *Fabrica::getInstanceReservaController()
 {
@@ -35,7 +35,7 @@ IReservaController *Fabrica::getInstanceReservaController()
 }
 
 IReloj *Fabrica::getInstanceReloj() //??
-{
-    IReloj *controlador = Reloj::getInstance();
-    return controlador;
-}
+ {
+     IReloj *controlador = Reloj::getInstanceReloj();
+     return controlador;
+ }

@@ -3,16 +3,17 @@
 
 
 #include "DataUsuario.h"
-#include "Cargo.h"
+#include "../include/Cargo.h"
 
 
-class DataEmpleado:public DataUsuario
+class DataEmpleado: public DataUsuario
 {
 private:
     string hostal;
-    Cargo tipoCargo;
+    Cargo tipoCargo; //aca cambiar luego de definir
 public:
-    DataEmpleado(string,string,string,Cargo);
+    DataEmpleado();
+    DataEmpleado(string,string,string, Cargo);
     string getHostal();
     Cargo getCargo();
     ~DataEmpleado();

@@ -8,12 +8,12 @@
 class DtaReserva: public DatasReserva {
 
     protected:
-        EstadoReserva estado;
+        // EstadoReserva estado;
         float precio;
 
     public:
         DtaReserva();
-        EstadoReserva getEstado();
+        // EstadoReserva getEstado();
         float getPrecio();
 
 };

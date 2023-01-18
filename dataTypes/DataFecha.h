@@ -10,6 +10,7 @@ private:
 	int dia, mes, anio, hora;
 
 public:
+	DataFecha();
 	DataFecha(int, int, int, int);
 	int getDia();
 	int getMes();
@@ -19,7 +20,9 @@ public:
 	void getMes(int);
 	void getAnio(int);
 	void getHora(int);
-	bool operator==(DataFecha);
+	// bool operator==(DataFecha);
+	bool operator<(DataFecha);
+
 };
 
 ostream &operator<<(ostream &os, DataFecha &f);

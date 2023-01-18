@@ -1,17 +1,19 @@
 #ifndef DTAHOSTAL
-#define DTAHOSTAÑ
+#define DTAHOSTAL
 
 #include "DatasHostal.h"
 
+using namespace std;
 
 class DtaHostal: public DatasHostal {
-    private:
+       // EstadoReserva estado; private:
         int calPromedio;
 
     public:
-
+        DtaHostal();
         DtaHostal(string,string,int);
-        int getCalPromedio();
+        
+        //int getCalPromedio();
 
 
 };

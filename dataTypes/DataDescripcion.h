@@ -2,24 +2,19 @@
 #define DATADESCRIPCION
 #include <string>
 #include <set>
+#include "DataHabitacion.h"
+#include "DtDescripcion.h"
 
 using namespace std;
 
-#include "DataHabitacion.h"
-
-class DataDescripcion
-{
+class DataDescripcion: public DtDescripcion {
 private:
-	set<string> comentarios;
-	set<int> calificaciones;
 	float promedio;
 	DataHabitacion habitacion;
 
 public:
-	//DataDescripcion();
+	DataDescripcion();
 	DataDescripcion(set<string>,set<int>,float,DataHabitacion);
-	set<string> getComentarios();
-	set<int> getCalificaciones();
 	float getPromedio();
 	DataHabitacion getHabitacion();
 };

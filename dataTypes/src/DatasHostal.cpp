@@ -1,6 +1,6 @@
 
 
-#include "DatasHostal.h"
+#include "../DatasHostal.h"
 
 
 string DatasHostal::getNombre(){

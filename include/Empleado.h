@@ -3,11 +3,14 @@
 #include <string>
 #include "Usuario.h"
 #include <set>
+#include <vector>
 #include "Cargo.h"
+#include "bits/stdc++.h"
 #include "Responde.h"
 #include "Notificacion.h"
 #include "Hostal.h"
-#include "Observer.h"
+#include "IObserver.h"
+#include "../dataTypes/DataEmpleado.h"
 
 using namespace std;
 
@@ -19,30 +22,39 @@ class Estadia;
 class Calificacion;
 class Habitacion;
 class DataReserva;
+class Usuario;
+class IObserver;
 
 // agregar public observer
-class Empleado : public Usuario, public Observer
+class Empleado : public Usuario, public IObserver
 {
 private:
-	Cargo cargo;
-	set<Notificacion> notificaciones;
+	string cargo; // estaba de tipo cargo pero es un tipo enumerado asi q lo puse string pero hay q revisar
+	vector<Notificacion> notificaciones;
 	Hostal *hostal;
-	set<Responde> respuestas;
+	vector<Responde> respuestas;
 
 public:
-	Empleado(string, string, std::string, Cargo, Hostal);
-	Cargo getCargo();
-	void setCargo(Cargo);
+	Empleado(string, string, string, string, Hostal*);
+	string getCargo();
+	void setCargo(string);
 	Hostal *getHostal();
-	void setHostal(Hostal);
-	set<Responde> getRespuestas();
+	void setHostal(Hostal*);
+	
+	vector<Responde> getRespuestas();
 	void setRespuestas(Responde);
-	set<Notificacion> getNotificaciones();
-	void setNotificaciones(Notificacion);
+	// set<Notificacion> getNotificaciones();
+	// void setNotificaciones(Notificacion);
+	// void Notificar(Notificacion n);
+	// DataReserva *getDatos();
+	DataEmpleado *getDataUsuario();
+	// ~Empleado();
+
+//	DataEmpleado obtenerDatosEmpleado();
+	vector<Notificacion> getNotificaciones();
+	void borrarNotificaciones();
+	//void setNotificaciones();
 	void Notificar(Notificacion n);
-	DataReserva *getDatos();
-	DataUsuario *getDataUsuario();
-	~Empleado();
 };
 
 #endif

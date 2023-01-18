@@ -1,8 +1,10 @@
 #ifndef CARGO
 #define CARGO
+using namespace std;
+#include <iostream>
 
 enum Cargo{
-	administracion, limpieza, recepcion, infraestructura
+    Administracion, Limpieza, Recepcion, Infraestructura
 };
 
 #endif

@@ -26,4 +26,3 @@ bool DataHabitacion::operator==(DataHabitacion h){
     return (this->numero == h.getNumero() && this->precio == h.getPrecio() && this->capacidad == h.getCapacidad());
 }
 
-

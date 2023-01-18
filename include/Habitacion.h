@@ -3,8 +3,10 @@
 #include <string>
 #include "Hostal.h"
 #include "Reserva.h"
-#include "../dataTypes/DataFecha.h"
+//  #include "../dataTypes/DataFecha.h"
+#include <map>
 
+class Hostal;
 class Habitacion
 {
 private:
@@ -12,21 +14,23 @@ private:
 	float precio;
 	int capacidad;
 	Hostal *hostal;
-	set<Reserva> reservas;
+	map<int,Reserva*> reservas;
 
 public:
-	Habitacion(int, float, int, Hostal);
+	Habitacion(int, float, int, Hostal*);
 	int getNumHab();
 	float getPrecio();
 	int getCapacidad();
 	Hostal *getHostal();
-	set<Reserva> getReservas();
-	int setNumHab();
-	float setPrecio();
-	int setCapacidad();
-	set<Reserva> setReservas();
-	set<Reserva> getReservas(DataFecha, DataFecha);
-	~Habitacion();
+	bool getReservasDisponibles(DataFecha,DataFecha);
+// // 	int setNumHab();
+// // 	float setPrecio();
+// // 	int setCapacidad();
+ void setReservas(int,Reserva*);
+  void setReservas2(map<int, Reserva *>);
+ map<int,Reserva*> getReservas();
+// 	set<Reserva> getReservas(DataFecha, DataFecha);
+// 	~Habitacion();
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "DataUsuario.h"
+#include "../DataUsuario.h"
 
 
 string DataUsuario::getNombre(){

@@ -1,15 +1,15 @@
-#include "DtEmpleado.h"
+#include "../DtEmpleado.h"
 
 
-DtEmpleado::DtEmpleado(string nombre,string email,Cargo tipoCargo)
+DtEmpleado::DtEmpleado(string nombre,string email,string tipoCargo)
 {
-    this->nombre = getNombre();
-    this->email = getEmail();
+    this->nombre = nombre;
+    this->email = email;
     this->tipoCargo = tipoCargo;
 
 
 }
 
-Cargo DtEmpleado::getCargo(){
+string DtEmpleado::getCargo(){
     return this->tipoCargo;
 }
